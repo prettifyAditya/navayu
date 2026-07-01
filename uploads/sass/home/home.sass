@@ -1,0 +1,152 @@
+@import "../_common"
+
+.home-secB
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    .left
+        background: linear-gradient(90deg, #6D5DCF 0%, #13958F 100%)
+        padding: 50px 100px 50px 50px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        h2
+            @include font(700)
+            color: $white
+            max-width: 450px
+            font-size: 60px
+            line-height: 60px
+            margin-bottom: 32px
+            font-family: $Montreal
+        p
+            color: white
+        a
+            margin-top: 62px
+
+    .right
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.home-secC
+    padding: 70px 0
+    .container
+        .row
+            display: grid
+            grid-template-columns: 1fr 362px 360px
+            align-items: center
+            .left
+                height: fit-content
+                h6
+                    font-size: 20px
+                    line-height: 24px
+                    @include font(500)
+                    color: $secondary
+                    margin-bottom: 32px
+                h2
+                    font-size: 48px
+                    line-height: 48px
+                    font-family: $Montreal
+                    color: $primary
+                    font-weight: 300
+                    padding-left: 32px
+                    border-left: 4px solid $tertiary
+                .stat
+                    margin-top: 52px
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    gap: 24px
+                    .item
+                        p
+                            color: $text
+                        h4
+                            background: linear-gradient(90deg, #6D5DCF 0%, #13958F 100%)
+                            -webkit-background-clip: text
+                            background-clip: text
+                            color: transparent
+                            font-family: $Montreal
+                            @include font(700)
+            .middle
+                video
+                    width: 100%
+                    height: 519px
+                    object-fit: cover
+                    -webkit-mask-image: url(../../../public/vector/icon-color.svg)
+                    mask-image: url(../../../public/vector/icon-color.svg)
+                    -webkit-mask-size: 100% 100%
+                    mask-size: 100% 100%
+                    -webkit-mask-repeat: no-repeat
+                    mask-repeat: no-repeat
+                    -webkit-mask-position: center
+                    mask-position: center
+            .right
+                height: fit-content
+                p
+                    color: $text
+                a
+                    margin-top: 24px
+
+.home-secD
+    position: relative
+    height: calc(100vh - var(--headerheight))
+    overflow: hidden
+    video
+        width: 100%
+        height: 100%
+        object-fit: cover
+        opacity: 30%
+        position: absolute
+        inset: 0
+    &::before
+        position: absolute
+        inset: 0
+        background: linear-gradient(90deg, #6D5DCF 0%, #13958F 100%)
+        content: " "
+    .content
+        padding: 100px var(--containerfluid)
+        z-index: 2
+        position: relative
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        height: 100%
+        .left
+            h2
+                @include font(700)
+                font-family: $Montreal
+                color: $white
+        .right
+            display: flex
+            flex-direction: column
+            justify-content: end
+            p
+                color: $white
+                font-size: 24px
+                line-height: 30px
+                @include font(600)
+            .btn
+                margin-top: 32px
+
+.experts_sec
+    padding-top: 100px
+    .main_wrapper
+        --gap: 50px
+        gap: var(--gap)
+        .heading
+            flex: 1
+            max-width: 50%
+            width: 100%
+            text-align: left
+            h2
+                line-height: 1
+            p
+                margin-top: 20px
+                max-width: 418px
+            .btn
+                margin-top: 60px
+        .experts_wrapper
+            flex: 1
+            max-width: 50%
+            width: 100%
+            display: flex
+            flex-wrap: wrap
+            gap: 20px

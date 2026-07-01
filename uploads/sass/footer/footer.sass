@@ -1,0 +1,128 @@
+@import "../_common"
+
+footer
+    overflow: hidden
+
+    .top
+        padding: 20px 0
+        background: var(--primary-light)
+        .container
+            display: flex
+            gap: 48px
+            .left
+                flex: 1
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                gap: 24px
+                .item
+                    display: flex
+                    align-items: center
+                    gap: 24px
+                    figure
+                        flex-shrink: 0
+                        border-right: 1px solid #4B438D59
+                        padding-right: 24px
+                        img
+                            width: 45px
+                            height: 45px
+                    figcaption
+                        p
+                            color: $text
+                            @include font(400)
+                            span
+                                @include font(700)
+                                color: $primary
+
+            .right
+                display: flex
+                align-items: center
+
+    .bottom-wrapper
+        background: $white
+        position: relative
+        &::before
+            position: absolute
+            content: " "
+            right: 18%
+            bottom: 0
+            top: 0
+            background-image: url("/vector/icon.svg")
+            background-repeat: no-repeat
+            background-size: cover
+            z-index: 0
+            width: 271px
+            height: 350px
+        .middle
+            padding: 45px 0 50px
+            .container
+                display: flex
+                gap: 50px
+                .col
+                    &:nth-child(1)
+                        flex: 0 0 25%
+                    &:nth-child(2), &:nth-child(3)
+                        flex: 0 1 20%
+                        h4
+                            font-size: 14px
+                            @include font(600)
+                            color: var(--primary)
+                            text-transform: uppercase
+                            margin-bottom: 16px
+                        ul
+                            li
+                                a
+                                    font-size: 14px
+                                    color: #00000099
+                                    @include font(500)
+                                    transition: .4s ease
+                                    display: inline-block
+                                    &:hover
+                                        color: $primary
+                                        transform: translateX(5px)
+                                &:not(:last-child)
+                                    margin-bottom: 4px
+                    &:last-child
+                        flex: 1
+                        display: flex
+                        flex-direction: column
+                        align-items: end
+                        gap: 24px
+                        .phone
+                            font-size: 24px
+                            @include font(600)
+                            color: $primary
+                        .social
+                            display: flex
+                            align-items: center
+                            z-index: 2
+                            gap: 16px
+                            li
+                                a
+                                    width: 43px
+                                    height: 43px
+                                    display: flex
+                                    justify-content: center
+                                    align-items: center
+                                    border-radius: 50%
+                                    border: 1px solid $primary
+                                    &:hover
+                                        background: $primary
+                                        img
+                                            filter: $white-filter
+
+
+
+                        
+        .bottom
+            border-top: 1px solid #00000026
+            padding: 28px 0
+            .container       
+                p
+                    text-align: center
+                    font-size: 12px
+                    @include font(500)
+                    color: $text
+                    span
+                        img
+                            margin-left: 10px
+                            vertical-align: middle

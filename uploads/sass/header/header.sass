@@ -1,0 +1,35 @@
+@import "../_common"
+
+header
+    top: 0
+    position: sticky
+    height: var(--headerheight)
+    padding: var(--headerpadding) var(--containerfluid)
+    z-index: 10
+    background: $white
+    .header-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .right
+            display: flex
+            align-items: center
+            gap: 28px
+            .drop-down
+                display: flex
+                align-items: center
+                gap: 8px
+                span
+                    color: $primary
+                    @include font(500)
+
+            .ham-btn
+                span
+                    background: $primary
+                    height: 2px
+                    width: 44px
+                    display: block
+                    &:not(:last-child)
+                        margin-bottom: 6px
+                        
+                

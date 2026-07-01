@@ -1,0 +1,50 @@
+@import "../_common"
+
+.banner
+    .banner-wrapper
+        .content
+            h1
+                max-width: 736px
+                background: linear-gradient(90deg, #25D9D1 0%, #FFFFFF 77.88%)
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                -moz-background-clip: text
+                -moz-text-fill-color: transparent
+            .swiper
+                padding: 0
+                height: 125px
+                overflow: hidden
+                .swiper-wrapper
+                    height: 100%
+                    .swiper-slide
+                        height: 100%
+            .btn
+                margin: 28px 0 0 0
+    .content-bottom
+        position: absolute
+        bottom: 10%
+        transform: translate(0, 10%)
+        ul
+            display: grid
+            grid-template-columns: 1fr 40% 1fr
+            li
+                display: flex
+                align-items: center
+                gap: 24px
+                padding: 0 50px
+                &:not(:last-child)
+                    border-right: 1px solid #FFFFFF80
+                &:first-child
+                    padding-left: 0
+                &:last-child
+                    padding-right: 0
+                figure
+                    flex-shrink: 0
+                    line-height: 0
+                figcaption
+                    p
+                        color: white
+                        @include font(400)
+                        span
+                            @include font(700)

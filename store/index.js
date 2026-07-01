@@ -1,0 +1,11 @@
+"use client";
+import { configureStore } from "@reduxjs/toolkit";
+import modalReducer from "./slice/modalSlice";
+import uiReducer from "./slice/uiSlice";
+
+export const store = configureStore({
+  reducer: {
+    modal: modalReducer,
+    ui: uiReducer,
+  },
+});
