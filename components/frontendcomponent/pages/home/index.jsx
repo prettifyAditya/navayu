@@ -5,6 +5,7 @@ import Overview from "./Overview";
 import Signature from "./Signature";
 import "@/uploads/sass/home/home.css";
 import Experts from "./Experts";
+import DirectorMessage from "./DirectorMessage";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
       <Overview />
       <Signature />
       <Experts />
+      <DirectorMessage />
     </>
   );
 };

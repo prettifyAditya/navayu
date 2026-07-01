@@ -150,3 +150,89 @@
             display: flex
             flex-wrap: wrap
             gap: 20px
+            height: 570px
+            overflow: hidden
+            .expert_slider
+                flex: 1
+                max-width: 50%
+                width: 100%
+                height: 100%
+                .swiper-wrapper
+                    height: 100%
+                    transition-timing-function: linear !important
+                .team_col
+                    border-radius: 10px
+                    cursor: pointer
+                    &:hover
+                        figure
+                            img
+                                transform: scale(1.1)
+                    &::before
+                        background: linear-gradient(0deg, #00000080, transparent)
+                        border-radius: inherit
+                    figure
+                        border-radius: inherit
+                        img
+                            border-radius: inherit
+                    figcaption
+                        padding: 0 25px 25px
+                        text-align: center
+                        h6
+                            color: $white
+                            font-size: 20px
+                            font-weight: 600
+                            line-height: 1.2
+                        p
+                            margin-top: 5px
+                            color: #FFFFFFB2
+                            font-size: 14px
+                            font-weight: 500
+                            line-height: 1.3
+
+.director_message
+    padding-top: 80px
+    background: linear-gradient(90deg, #7F59A0, #205A91, #419573)
+    @include before(url("/vector/vector2.svg"))
+    &::before
+        background-repeat: no-repeat
+        background-position: 99% 100%
+    .main_wrapper
+        --gap: 100px
+        gap: var(--gap)
+        justify-content: space-between
+        figure
+            flex: 0 1 auto
+            max-width: 35%
+            width: 100%
+            line-height: 0
+        figcaption
+            flex: 1
+            max-width: 70%
+            width: 100%
+            h4
+                margin-top: 60px
+                color: $white
+            .desc
+                margin-top: 20px
+                *
+                    color: $white
+                p
+                    &:not(:last-child)
+                        margin-bottom: 10px
+            .below_wrap
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 28px
+                margin-top: 65px
+                .play-btn
+                    flex: 0 1 auto
+                .director_details
+                    flex: 1
+                    h6
+                        font-weight: 700
+                        color: $white
+                        font-size: 24px
+                    p
+                        font-size: 14px
+                        color: $white

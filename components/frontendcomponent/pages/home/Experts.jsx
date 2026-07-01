@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "../../atoms/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 export default function Experts() {
   return (
@@ -34,12 +35,50 @@ export default function Experts() {
             </div>
             <div className="experts_wrapper">
               <Swiper
+                className="expert_slider no-padding"
                 direction="vertical"
+                allowTouchMove={false}
                 slidesPerView={1.4}
                 spaceBetween={20}
                 autoplay={{
                   delay: 0,
-                  disableOnInteraction: true,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                modules={[Autoplay]}
+                speed={2000}
+                loop={true}
+              >
+                {expertsData.map((data) => (
+                  <SwiperSlide key={data.id}>
+                    <div className="team_col item-md">
+                      <figure>
+                        <Image
+                          src={data.imgSrc}
+                          width={280}
+                          height={373}
+                          alt={`${data.name}'s Image`}
+                        ></Image>
+                      </figure>
+                      <figcaption>
+                        <h6>{data.name}</h6>
+                        <p>{data.role}</p>
+                      </figcaption>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <Swiper
+                className="expert_slider no-padding"
+                direction="vertical"
+                allowTouchMove={false}
+                slidesPerView={1.4}
+                spaceBetween={20}
+                autoplay={{
+                  reverseDirection: true,
+                  delay: 0,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
                 }}
                 modules={[Autoplay]}
                 speed={2000}
