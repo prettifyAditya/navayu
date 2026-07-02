@@ -6,6 +6,8 @@ import Signature from "./Signature";
 import "@/uploads/sass/home/home.css";
 import Experts from "./Experts";
 import DirectorMessage from "./DirectorMessage";
+import HealingVoice from "./HealingVoice";
+import EnquireNow from "./EnquireNow";
 
 const Home = () => {
   return (
@@ -31,6 +33,8 @@ const Home = () => {
       <Signature />
       <Experts />
       <DirectorMessage />
+      <HealingVoice />
+      <EnquireNow />
     </>
   );
 };
