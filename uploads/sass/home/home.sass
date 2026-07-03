@@ -319,6 +319,7 @@
         justify-content: center
 
 .enquire_now
+    padding: 100px 0
     .main_wrapper
         --gap: 80px
         gap: var(--gap)
@@ -332,8 +333,122 @@
             width: 100%
             .heading
                 max-width: 431px
-                margin-bottom: 10px
+                margin-bottom: 30px
                 h2
                     color: $primary
                     font-size: 36px
                     line-height: 1.2
+            .form
+                .form-grid
+                    --item: 2
+                    --gaplr: 40px
+                .btn_wrap
+                    margin-top: 40px
+                    justify-content: center
+
+.treatment_sec
+    position: relative
+    width: 100%
+    height: 100vh
+    max-height: 90vh
+    background: $white
+    overflow: hidden
+    .circle_wrapper
+        position: absolute
+        left: -80%
+        top: 50%
+        transform: translate(80%, -50%)
+        border-radius: 50%
+        width: 66vw
+        height: 66vw
+        border: 1px solid #CFCFCF
+        --dot: 30px
+        pointer-events: none
+        .title
+            font-size: 16px
+            font-weight: 400
+            text-transform: uppercase
+            position: absolute
+            top: 50%
+            right: 30%
+            transform: translate(30%, -50%)
+        .dots
+            position: absolute
+            width: var(--dot)
+            height: var(--dot)
+            border-radius: 50%
+            top: 50%
+            right: calc( var(--dot) * .5 * -1 )
+            transform: translateY(-50%)
+            background: #D24343
+            filter: blur(10)
+    .content_wrapper
+        width: 100%
+        height: 100%
+        position: relative
+        .content_slider
+            width: 100%
+            height: 100%
+            .swiper-slide
+                transition: .6s ease
+                opacity: 0
+                // &:not(.swiper-slide-active)
+                //     .content_col
+                //         opacity: .2
+                &.swiper-slide-active
+                    opacity: 1
+                &.swiper-slide-prev
+                    opacity: .2
+                    .content_col
+                        transform: rotate(-10deg)
+                &.swiper-slide-next
+                    opacity: .2
+                    .content_col
+                        transform: rotate(10deg)
+            .content_col
+                position: relative
+                border-top: 1px solid #CFCFCF
+                padding: 45px var(--containerfluid) 25px
+                display: flex
+                justify-content: end
+                transform-origin: center left
+                transition: 1s ease
+                .count
+                    background: $white
+                    font-size: 32px
+                    font-weight: 400
+                    color: $text
+                    position: absolute
+                    top: -24px
+                    left: 50%
+                    transform: translateX(-50%)
+                .content_details
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: start
+                    --gap: 45px
+                    gap: var(--gap)
+                    figcaption
+                        flex: 1
+                        max-width: 360px
+                        h4
+                            font-size: 36px
+                            color: $primary
+                            margin-bottom: 10px
+                            line-height: 1.1
+                        .desc
+                            height: 100px
+                            overflow-y: auto
+                            // @include scrollbar(width: 1px)
+                            p
+                                color: $text
+                                font-weight: 400
+                                &:not(:last-child)
+                                    margin-bottom: 10px
+                        .btn
+                            margin-top: 20px
+                    figure
+                        flex: 0 1 140px
+                        border-radius: 10px
+                        img
+                            border-radius: inherit

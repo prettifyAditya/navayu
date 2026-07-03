@@ -6,8 +6,10 @@ import SwiperButton from "../../atoms/SwiperButton";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useState } from "react";
+import { useModal } from "@/hooks/useModal";
 
 export default function HealingVoice() {
+  const { openModal } = useModal();
   const [activeTab, setActiveTab] = useState(healingData[0].id);
 
   return (

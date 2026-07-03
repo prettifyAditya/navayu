@@ -1,10 +1,23 @@
-import "@/uploads/sass/header/header.css";
+"use client";
 import Image from "next/image";
 import Button from "../atoms/Button";
+import { useEffect, useState } from "react";
+import "@/uploads/sass/header/header.css";
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <header>
+    <header className={isScrolled ? "header-fixed" : ""}>
       <div className="header-wrapper">
         <a href="" className="logo">
           <Image src="/image/logo.svg" alt="logo" width={149} height={51} />

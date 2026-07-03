@@ -30,14 +30,14 @@ const Hero = ({ video, poster, image, title, button, slider, isHome }) => {
                 <Swiper
                   direction="vertical"
                   slidesPerView={1}
-                  spaceBetween={16}
+                  spaceBetween={15}
                   autoplay={{
                     delay: 0,
                     disableOnInteraction: true,
                   }}
                   modules={[Autoplay]}
                   speed={2000}
-                  loop={true}
+                  loop={false}
                 >
                   {slider.map((item, i) => {
                     return (

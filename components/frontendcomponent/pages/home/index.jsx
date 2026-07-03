@@ -8,6 +8,7 @@ import Experts from "./Experts";
 import DirectorMessage from "./DirectorMessage";
 import HealingVoice from "./HealingVoice";
 import EnquireNow from "./EnquireNow";
+import TreatmentSec from "./TreatmentSec";
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
         ]}
         isHome={true}
       />
+      <TreatmentSec />
       <Movement />
       <Overview />
       <Signature />

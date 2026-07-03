@@ -13,6 +13,7 @@ $scrollwidth: 10px
 :root
     --headerpadding: 10px
     --headerheight: 73px
+    --headerfixed: 65px
     --footerstrip: 38px
     --projectdetailstrip: 40px
     --primary: #4B438D
@@ -51,19 +52,21 @@ body
         box-shadow: none
     &::-webkit-scrollbar-thumb
         background-color: $secondary
-    &.no-scroll
+    &.overflow-hidden
         overflow: hidden
         margin-right: $scrollwidth
-        @include media(991)
+        @include media(768)
             margin-right: 0
         header
             width: calc(100% - $scrollwidth)
-            @include media(991)
-                width: 100%
 
 html
     scroll-behavior: smooth
     scroll-padding-top: var(--headerheight)
+
+::selection
+    background: #4b438d9c
+    color: $white
 
 body,html
     font-size: 16px
@@ -335,9 +338,7 @@ button
     transform: translateY(100%)
     transition: 0s ease .5s,opacity .5s ease
     cursor: pointer
-    @include media(991)
-        z-index: 2
-    @include media(675)
+    @include media(540)
         display: none
     &.is-open
         transition: opacity 1s ease
@@ -396,19 +397,56 @@ button
     &.btn-border-gradient-a
         border: 1px solid var(--gradient-a)
     &.btn-gradient-b
-        background: var(--gradient-b)
+        background: transparent
         color: $white
         border: 0
-        &:hover
-            background: var(--gradient-a)
-            color: $white
-    &.btn-gradient-a
-        background: var(--gradient-a)
-        color: $white
-        border: 0
-        &:hover
+        &::before, &::after
+            content: ""
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            transition: .5s ease
+        &::before
+            z-index: -1
             background: var(--gradient-b)
+        &::after
+            z-index: -1
+            background: var(--gradient-a)
+            opacity: 0
+        &:hover
             color: $white
+            &::before
+                opacity: 0
+            &::after
+                opacity: 1
+    &.btn-gradient-a
+        background: transparent
+        color: $white
+        border: 0
+        &::before, &::after
+            content: ""
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            transition: .5s ease
+        &::before
+            z-index: -1
+            background: var(--gradient-b)
+            opacity: 0
+        &::after
+            z-index: -1
+            background: var(--gradient-a)
+            opacity: 1
+        &:hover
+            color: $white
+            &::before
+                opacity: 1
+            &::after
+                opacity: 0
 
     &.btn-border-white
         background: none
@@ -498,7 +536,7 @@ button
     @include media(540)
         padding: 40px 0
 
-.modal
+.model
     position: fixed
     top: 0
     bottom: 0
@@ -509,14 +547,12 @@ button
     max-width: 435px
     width: 100%
     .close
-        cursor: pointer
-        &:not(.btn,.close-video,.not-ab)
+        &:not(.btn)
             position: absolute
             top: 0
             right: 0
-            top: 25px
-            right: 25px
-            line-height: 0
+            top: 40px
+            right: 40px
             @include media(520)
                 top: 20px
                 right: 20px

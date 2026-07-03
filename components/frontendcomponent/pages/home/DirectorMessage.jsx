@@ -1,6 +1,8 @@
+import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
 
 export default function DirectorMessage() {
+  const { openModal } = useModal();
   return (
     <div className="director_message">
       <div className="container">
@@ -28,7 +30,10 @@ export default function DirectorMessage() {
               </p>
             </div>
             <div className="below_wrap">
-              <button className="play-btn"></button>
+              <button
+                className="play-btn"
+                onClick={() => openModal("video", "/video/healing1.mp4")}
+              ></button>
               <div className="director_details">
                 <h6>Dr. Sunil Saini</h6>
                 <p>MBBS, MS (Orthopedics), Trauma & Ilizarov Surgeon</p>

@@ -1,96 +1,116 @@
 import "@/uploads/sass/footer/footer.css";
 import Image from "next/image";
 import Link from "next/link";
+import Overlay from "./Overlay";
+import VideoPop from "./VideoPop";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="top">
-        <div className="container">
-          <ul className="left">
-            {stats.map(({ icon, description }, index) => (
-              <li className="item" key={index}>
-                <figure>
-                  <Image src={icon} alt="icon" width={54} height={54} />
-                </figure>
-                <figcaption dangerouslySetInnerHTML={{ __html: description }} />
-              </li>
-            ))}
-          </ul>
-          <div className="right">
-            <button className="btn btn-gradient-a">Book a consultation</button>
-          </div>
-        </div>
-      </div>
-      <div className="bottom-wrapper">
-        <div className="middle">
+    <>
+      <footer>
+        <div className="top">
           <div className="container">
-            <div className="col">
-              <Image src="/image/logo.svg" alt="logo" width={204} height={68} />
-            </div>
-            {footerLink.map(({ title, list }, i) => {
-              return (
-                <div className="col" key={i}>
-                  <h4>{title}</h4>
-                  <ul>
-                    {list.map(({ label, path }, j) => {
-                      return (
-                        <li key={j}>
-                          <Link href={path}>{label}</Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
-            })}
-            <div className="col">
-              <Link className="phone" href="tel:+919217373153">
-                +91-9217373153
-              </Link>
-              <Link href="" className="btn btn-border-primary">
-                <Image
-                  src="/icon/whatsapp-primary.svg"
-                  alt="whatsapp"
-                  width={18}
-                  height={18}
-                />{" "}
-                Whatsapp
-              </Link>
-              <ul className="social">
-                {social.map(({ icon, href }, i) => {
-                  return (
-                    <li key={i}>
-                      <Link href={href}>
-                        <Image src={icon} alt="social" width={20} height={20} />
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="bottom">
-          <div className="container">
-            <p>
-              &copy; Navayu . All Right Reserved
-              <span>
-                Made by
-                <Link href="https://prettifycreative.in">
-                  <Image
-                    src="/image/prettify.svg"
-                    alt="prettify"
-                    width={57}
-                    height={21}
+            <ul className="left">
+              {stats.map(({ icon, description }, index) => (
+                <li className="item" key={index}>
+                  <figure>
+                    <Image src={icon} alt="icon" width={54} height={54} />
+                  </figure>
+                  <figcaption
+                    dangerouslySetInnerHTML={{ __html: description }}
                   />
-                </Link>
-              </span>
-            </p>
+                </li>
+              ))}
+            </ul>
+            <div className="right">
+              <button className="btn btn-gradient-a">
+                Book a consultation
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+        <div className="bottom-wrapper">
+          <div className="middle">
+            <div className="container">
+              <div className="col">
+                <Image
+                  src="/image/logo.svg"
+                  alt="logo"
+                  width={204}
+                  height={68}
+                />
+              </div>
+              {footerLink.map(({ title, list }, i) => {
+                return (
+                  <div className="col" key={i}>
+                    <h4>{title}</h4>
+                    <ul>
+                      {list.map(({ label, path }, j) => {
+                        return (
+                          <li key={j}>
+                            <Link href={path}>{label}</Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+              <div className="col">
+                <Link className="phone" href="tel:+919217373153">
+                  +91-9217373153
+                </Link>
+                <Link href="" className="btn btn-border-primary">
+                  <Image
+                    src="/icon/whatsapp-primary.svg"
+                    alt="whatsapp"
+                    width={18}
+                    height={18}
+                  />{" "}
+                  Whatsapp
+                </Link>
+                <ul className="social">
+                  {social.map(({ icon, href }, i) => {
+                    return (
+                      <li key={i}>
+                        <Link href={href}>
+                          <Image
+                            src={icon}
+                            alt="social"
+                            width={20}
+                            height={20}
+                          />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="bottom">
+            <div className="container">
+              <p>
+                &copy; Navayu . All Right Reserved
+                <span>
+                  Made by
+                  <Link href="https://prettifycreative.in">
+                    <Image
+                      src="/image/prettify.svg"
+                      alt="prettify"
+                      width={57}
+                      height={21}
+                    />
+                  </Link>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <Overlay />
+      <VideoPop />
+    </>
   );
 };
 
