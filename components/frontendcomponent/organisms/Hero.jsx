@@ -5,11 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "@/uploads/sass/component/component.css";
 
-const Hero = ({ video, poster, image, title, button, slider, isHome }) => {
+const Hero = ({
+  className = "",
+  video,
+  poster,
+  image,
+  title,
+  button,
+  slider,
+  isHome,
+}) => {
   const { label, href, onClick } = button;
 
   return (
-    <section className="banner center-vertical">
+    <section className={`banner hero-banner ${className}`}>
       <div className="bg">
         {video && (
           <video

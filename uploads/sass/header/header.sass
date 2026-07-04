@@ -23,9 +23,69 @@ header
                 display: flex
                 align-items: center
                 gap: 8px
+                position: relative
+                --triangle: 10px
+                cursor: pointer
+                &:hover
+                    .dropdown-menu
+                        opacity: 1
+                        transform: translate(-50%, 0) scale3d(1, 1, 1)
                 span
                     color: $primary
                     @include font(500)
+                .dropdown-menu
+                    position: absolute
+                    top: calc(100% + var(--triangle))
+                    left: 50%
+                    transform: translateX(-50%) perspective(2000px) translate3d(0px, -25px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
+                    transform-origin: top
+                    transition: .5s ease
+                    opacity: 0
+                    width: 400px
+                    &::before
+                        content: ""
+                        display: block
+                        position: absolute
+                        bottom: calc(100% - var(--triangle) / 2)
+                        left: 50%
+                        transform: translate(-50%)
+                        width: var(--triangle)
+                        height: var(--triangle)
+                        transform: rotate(45deg)
+                        z-index: -1
+                        background: var(--primary)
+                    ul
+                        background: var(--white)
+                        padding: 15px 0
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+                        border-radius: 5px
+                        li
+                            a
+                                color: $black
+                                display: flex
+                                align-items: start
+                                gap: 12px
+                                padding: 10px 18px
+                                transition: .5s ease
+                                &:hover
+                                    background: #4b438d24
+                                img, svg
+                                    flex: 0 1 auto
+                                    width: 35px
+                                    height: 35px
+                                    line-height: 0
+                                figcaption
+                                    flex: 1
+                                    h6
+                                        font-size: 16px
+                                        font-weight: 600
+                                        line-height: 1.1
+                                        margin-bottom: 7px
+                                        color: $primary
+                                    p
+                                        font-size: 14px
+                                        line-height: 1.2
+                                        color: $text
 
             .ham-btn
                 span
@@ -136,6 +196,7 @@ header
     right: 0
     max-width: 480px
     transform: translateX(100%)
+    background: linear-gradient(0deg, #d1b6e5, #ffffff 60%)
     transition: .5s ease
     z-index: 10
     &::before
@@ -145,11 +206,10 @@ header
         bottom: 0
         width: 100%
         height: 100%
-        // background: url(../../images/logo-dark.svg) no-repeat $white
-        background-position: 190% 110%
-        opacity: 0.1
-        @include media(540)
-            background-size: 80%
+        background: url("/vector/icon.svg") no-repeat
+        background-position: 98% 100%
+        background-size: 50%
+        opacity: .4
     &.is-open
         transform: translateX(0%)
     .close
@@ -172,86 +232,69 @@ header
         display: flex
         flex-direction: column
         position: relative
-        @include scrollbar(0px,$black,#fff,0px)
+        @include scrollbar(0px)
         @include media(540)
             padding: 0 20px 20px
             margin-top: 40px
         .icon
-            margin-bottom: 30px
+            width: 60px
             line-height: 0
-            img,svg
-                width: 100px
-                height: 100px
-                animation: rotateicon 20s ease infinite forwards
-                @keyframes rotateicon
-                    0%
-                        transform: rotate(0)
-                    100%
-                        transform: rotate(360deg)
+            margin-bottom: 20px
+            svg, img
+                object-fit: contain
         .nav-list
             width: 100%
             >li
                 &:not(:last-child)
                     margin-bottom: 15px
-                &:hover
-                    h5, >a
-                        transform: translateX(5px)
-                        transition: .5s ease
-                        @include media(540)
-                            transform: translateX(0px)
-                &.desktop-non
-                    display: none
+                &:not(.hasDropdown)
+                    a
+                        &:hover
+                            transform: translateX(5px)
                 &.hasDropdown
                     position: relative
                     cursor: pointer
-                    &:hover
-                        .title
-                            h5
-                                color: $primary
-                    .title
-                        display: flex
-                        justify-content: space-between
-                        align-items: center
-                        &.active
-                            h5
-                                color: var(--primary)
+                    &.active
+                        p, a
+                            color: $secondary
                             svg
-                                transform: rotate(90deg)
-                        h5
-                            font-size: 22px
-                            color: #000
-                            transition: .3s ease
-                        .arrow
-                            width: 30px
-                            transition: .5s ease
-                        svg
-                            transition: .5s ease
-                            width: 16px
+                                transform: rotate(-90deg)
+                        .dropdown-menu-ham
+                            grid-template-rows: 1fr
+                            >ul
+                                border-bottom: 1px solid #dadada
+                                padding: 10px 0
                     .dropdown-menu-ham
-                        display: none
+                        display: grid
+                        grid-template-rows: 0fr
                         padding-top: 15px
-                        ul
+                        transition: .5s ease
+                        >ul
                             border-top: 1px solid #dadada
-                            border-bottom: 1px solid #dadada
-                            padding: 10px
+                            transition: .5s ease
+                            overflow: hidden
                             li
-                                a
+                                a, p
                                     display: block
                                     font-size: 16px
                                     color: #666
                                     padding: 3px 0
                                     transition: .5s ease
                                     &:hover
-                                        color: $primary
-                >a
-                    display: block
+                                        transform: translateX(5px)
+                                        color: $secondary
+                >a, p
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
                     font-size: 22px
                     color: #000
-                    text-transform: uppercase
                     transition: .3s ease
                     @include font(500)
                     &:hover
-                        color: $primary
+                        color: $secondary
+                    svg
+                        transition: .5s ease
         .bottom-list
             margin-top: 2rem
             padding-top: 1rem
@@ -260,19 +303,22 @@ header
             gap: 1rem
             border-top: 1px solid #dadada
             .social-icons
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 15px
                 a
                     display: inline-flex
                     vertical-align: middle
                     align-items: center
                     justify-content: center
+                    border: 1px solid $text
                     height: 40px
                     width: 40px
                     border-radius: 50%
-                    color: #000
+                    color: $text
                     line-height: 0
                     overflow: hidden
-                    &:not(:last-child)
-                        margin-right: 4px
                     svg
                         width: 20px
                         height: 20px
@@ -283,28 +329,23 @@ header
                             &[fill]
                                 fill: currentColor
                     &:hover
-                        background-color: $primary
+                        background-color: $secondary
+                        border-color: $secondary
                         color: $white
 
-.enquire-pop
-    right: 0
-    transform: translateX(100%)
-    transition: .5s ease
-    &::before
-        content: ""
-        position: absolute
-        left: 0
-        bottom: 0
-        width: 100%
-        height: 100%
-        // background: url(../../images/logo-dark.svg) no-repeat var(--white)
-        background-position: 190% 110%
-        z-index: -1
-        opacity: 0.1
-        @include media(540)
-            background-size: 85%
+.enquire-pop.model
+    border-radius: 10px
+    max-width: 580px
+    height: fit-content
+    max-height: 90vh
+    top: 50%
+    left: 50%
+    overflow-y: auto
+    transform: translate(-50%,100vh)
+    transition: .7s ease
     &.is-open
-        transform: translateX(0%)
+        transition: .7s ease
+        transform: translate(-50%,-50%)
     .close
         &:not(.btn)
             top: 20px
@@ -313,7 +354,7 @@ header
         padding: 0px 35px 30px
         margin-top: 50px
         height: 100%
-        overflow-y: auto
+        min-height: fit-content
         @include scrollbar(3px,$white,#5e5e5e,8px)
         @include media(768)
             padding: 0px 15px 20px
@@ -328,18 +369,14 @@ header
                 color: $text
                 font-size: 14px
                 max-width: 317px
-                margin: 5px auto 0
+                margin: 8px auto 0
+                line-height: 1.3
                 @include media(675)
                     font-size: 14px
                     max-width: 300px
         .form
-            --gaptb: 25px
-            --labelbefore: $black
-            --labelafter: $black
-            --borderbefore: $black
-            --color: $black
-            --borderbefore: var(--black)
+            --gaptb: 28px
+            --item: 2
             .sbmt-grp
                 margin-top: 1rem
-                .btn
-                    margin: 0 auto
+                text-align: center

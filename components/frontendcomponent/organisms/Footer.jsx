@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Overlay from "./Overlay";
 import VideoPop from "./VideoPop";
+import Hamburger from "./Hamburger";
+import EnquirePop from "./EnquirePop";
 
 const Footer = () => {
   return (
@@ -110,6 +112,8 @@ const Footer = () => {
       </footer>
       <Overlay />
       <VideoPop />
+      <Hamburger />
+      <EnquirePop />
     </>
   );
 };

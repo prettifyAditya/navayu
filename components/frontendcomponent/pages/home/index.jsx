@@ -14,6 +14,7 @@ const Home = () => {
   return (
     <>
       <Hero
+        className="home-hero"
         video="/video/home-banner.mp4"
         poster="/images/hero-banner-poster.png"
         button={{
