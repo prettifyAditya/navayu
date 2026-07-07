@@ -2,28 +2,30 @@ import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <div className="why_choose_us sec-pad-all">
-      <div className="container">
-        <div className="heading">
-          <h2>Why Choose Us</h2>
-        </div>
-        <div className="why_wrapper">
-          {whyData.map((item) => (
-            <div className="why_col" key={item.id}>
-              <div className="icon">
-                <Image
-                  src={item.iconSrc}
-                  width={54}
-                  height={54}
-                  alt="Icon"
-                ></Image>
+    <section>
+      <div className="why_choose_us sec-pad-all">
+        <div className="container">
+          <div className="heading">
+            <h2>Why Choose Us</h2>
+          </div>
+          <div className="why_wrapper">
+            {whyData.map((item) => (
+              <div className="why_col" key={item.id}>
+                <div className="icon">
+                  <Image
+                    src={item.iconSrc}
+                    width={54}
+                    height={54}
+                    alt="Icon"
+                  ></Image>
+                </div>
+                <p>{item.title}</p>
               </div>
-              <p>{item.title}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

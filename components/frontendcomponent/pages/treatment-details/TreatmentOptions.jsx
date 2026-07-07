@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Button from "../../atoms/Button";
+import { useModal } from "@/hooks/useModal";
 
 export default function TreatmentOptions() {
+  const { openModal } = useModal();
   return (
     <section>
       <div className="treatment_options sec-pad-all">
@@ -49,7 +52,12 @@ export default function TreatmentOptions() {
             </div>
           </div>
           <div className="btn_wrap">
-            <Button variant="btn-gradient-b">Book a Consultation</Button>
+            <Button
+              variant="btn-gradient-b"
+              onClick={() => openModal("enquirePop")}
+            >
+              Book a Consultation
+            </Button>
           </div>
         </div>
       </div>

@@ -1,0 +1,345 @@
+@import "../_common"
+
+.about_story
+    .main_wrapper
+        --gap: 100px
+        align-items: center
+        justify-content: center
+        gap: var(--gap)
+        figure
+            flex: 0 1 35%
+            max-width: 35%
+            width: 100%
+            height: 480px
+            @include before(linear-gradient(#F1F0FF, #FAFAFF))
+            &::before
+                border-radius: 50%
+                width: 90%
+                height: 85%
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+            video
+                width: 100%
+                height: 100%
+                mask-image: url("/vector/icon-color.svg")
+                mask-position: center
+                mask-size: 70%
+                mask-repeat: no-repeat
+        figcaption
+            flex: 1
+            max-width: 550px
+            h3
+                font-size: 36px
+                color: $primary
+                margin-bottom: 20px
+            p
+                color: $text
+                line-height: 1.5
+
+.directors_message
+    padding-top: 120px
+    background: #F7F7FC
+    z-index: 0
+    @include before(url("/image/about/secondary-vector.svg"))
+    &::before
+        background-repeat: no-repeat
+        background-position: 99% 40%
+        z-index: -1
+    .main_wrapper
+        --gap: 100px
+        gap: var(--gap)
+        justify-content: center
+        figure
+            flex: 0 1 auto
+            max-width: 30%
+            width: 100%
+            line-height: 0
+        figcaption
+            flex: 1
+            max-width: 545px
+            .quote
+                width: 75px
+            h6
+                font-size: 18px
+                font-weight: 600
+                color: $primary
+                margin: 40px 0 25px
+            .desc
+                p
+                    font-size: 32px
+                    font-weight: 400
+                    color: $text
+            .details
+                margin-top: 45px
+                h4
+                    font-weight: 600
+                    font-size: 20px
+                    color: $primary
+                p
+                    font-weight: 500
+                    color: $text
+
+.awareness_trust
+    padding: 85px 0
+    background: var(--gradient-a)
+    .heading
+        margin-bottom: 60px
+        text-align: center
+        h2
+            font-size: 36px
+            color: $white
+    .main_wrapper
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        .awareness_col
+            width: 355px
+            height: 355px
+            padding: 80px 60px
+            background: #FFFFFF1A
+            border-radius: 50%
+            text-align: center
+            &:first-child
+                transform: translateX(50px)
+            &:last-child
+                transform: translateX(-50px)
+            .icon
+                width: 52px
+                height: 52px
+                margin: 0 auto 20px
+            h6
+                font-size: 32px
+                font-weight: 600
+                color: $white
+                margin-bottom: 5px
+            p
+                font-weight: 400
+                line-height: 1.2
+                color: $white
+
+.mission_vision
+    @include before(url("/image/about/mission_bg_vector.svg"))
+    @include after(url("/image/about/mission_bg_vector.svg"))
+    &::before, &::after
+        background-repeat: no-repeat
+        width: 250px
+        height: 250px
+        background-size: cover
+    &::before
+        left: unset
+        bottom: unset
+        top: 0
+        right: 0
+        transform: translate(0, 0)
+    &::after
+        left: 0
+        bottom: 0
+        top: unset
+        right: unset
+        transform: translate(0, 0) rotate(180deg)
+    .vision_col
+        margin-bottom: 80px
+    .vision_col, .mission_col
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+        --gap: 110px
+        gap: var(--gap)
+        figure
+            flex: 0 1 auto
+        figcaption
+            flex: 1
+            max-width: 564px
+            padding-left: 50px
+            border-left: 5px solid #F1B021
+            h3
+                font-size: 36px
+                color: $primary
+                margin-bottom: 20px
+            .desc
+                p
+                    font-weight: 400
+                    color: $text
+
+.signature_pillars
+    position: relative
+    z-index: 0
+    padding: 90px 0 100px
+    @include before()
+    &::before
+        background: linear-gradient(90deg, #865AA6, #06000000 40%), linear-gradient(0deg, #00000000, #000000)
+    .bg_video
+        position: absolute
+        width: 100%
+        height: 100%
+        inset: 0
+        z-index: -1
+    .container
+        position: relative
+        z-index: 2
+        .heading
+            text-align: center
+            margin-bottom: 70px
+            h2
+                font-size: 36px
+                color: $white
+        .main_wrapper
+            position: relative
+            .pillar_slider
+                max-width: 97%
+                .pillar_col
+                    width: 100%
+                    height: 100%
+                    background: #0000001A
+                    border-radius: 10px
+                    backdrop-filter: blur(40)
+                    text-align: center
+                    padding: 45px 40px
+                    .icon
+                        width: 60px
+                        height: 60px
+                        margin: 0 auto 30px
+                    h6
+                        font-weight: 600
+                        color: $white
+                        font-size: 18px
+                        margin-bottom: 15px
+                    p
+                        font-weight: 300
+                        color: #FFFFFFB2
+                        line-height: 1.4
+
+.awards_sec
+    padding: 70px 0
+    background: #F7F7FC
+    .heading
+        text-align: center
+        margin-bottom: 75px
+        h2
+            font-size: 36px
+            color: $primary
+    .award_wrapper
+        position: relative
+        .swiper-nav
+            max-width: 43%
+        .award_slider
+            .swiper-slide
+                transition: .7s ease
+                &:not(.swiper-slide-active)
+                    figure
+                        transform: scale(.7)
+                        opacity: .4
+                figure
+                    transition: .7s ease
+
+.news_media_sec
+    padding-bottom: 80px
+    .heading
+        text-align: center
+        margin-bottom: 50px
+        h2
+            font-size: 36px
+            color: $primary
+    .main_wrapper
+        height: 465px
+        .news_media
+            flex: 0 1 60%
+            max-width: 60%
+            width: 100%
+            height: 100%
+            @include media(1280)
+                flex: 0 1 65%
+                max-width: 65%
+            @include media(991)
+                flex: 0 1 100%
+                max-width: 100%
+            .tabs
+                height: 100%
+            .news_banner.banner
+                height: 100%
+                &::before
+                    background: linear-gradient(179deg, #0000 0%, #0000007d 100%)
+                    z-index: 1
+                &:hover
+                    .bg
+                        img
+                            transform: scale(1.1)
+                .bg
+                    height: 100%
+                    overflow: hidden
+                    @include media(540)
+                        height: 300px
+                    .banner-wrapper
+                        padding: 0 var(--containerfluid)
+                        top: unset
+                        bottom: 10%
+                        transform: translate(0, 10%)
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        @include media(540)
+                            flex-direction: column
+                            align-items: start
+                            gap: 20px
+                            bottom: 20%
+                            transform: translate(0, 20%)
+                        h4
+                            flex: 1
+                            max-width: 55%
+                            font-size: 16px
+                            color: $white
+                            line-height: 1.2
+                            font-weight: 500
+                            @include media(768)
+                                max-width: 70%
+                            @include media(540)
+                                max-width: 90%
+                                font-size: 16px
+
+        .news_info
+            flex: 0 1 40%
+            max-width: 40%
+            width: 100%
+            height: 100%
+            background: #F7F7FC
+            overflow-y: auto
+            @include scrollbar($color: var(--primary))
+            @include media(1280)
+                flex: 0 1 35%
+                max-width: 35%
+            @include media(991)
+                display: none
+            .info_col
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 25px
+                padding: 20px 40px
+                cursor: pointer
+                &:not(:last-child)
+                    border-bottom: 1px solid #EAEAEA
+                @include media(1280)
+                    padding: 15px 30px
+                &:hover, &.active
+                    .count
+                        opacity: 1
+                    .desc
+                        p
+                            color: var(--primary)
+                .count
+                    flex: 0 1 auto
+                    font-size: 36px
+                    font-weight: 600
+                    color: var(--primary)
+                    transition: .5s ease
+                    opacity: 0
+                .desc
+                    flex: 1
+                    p
+                        font-weight: 600
+                        font-size: 14px
+                        color: $text
+                        transition: .3s ease

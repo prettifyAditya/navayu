@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutTreatment() {
   return (
-    <>
+    <section>
       <div className="top_nav">
         <ul className="container">
           <li>
@@ -69,6 +69,6 @@ export default function AboutTreatment() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

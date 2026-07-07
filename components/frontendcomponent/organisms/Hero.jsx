@@ -10,6 +10,7 @@ const Hero = ({
   video,
   poster,
   image,
+  tag,
   title,
   button,
   slider,
@@ -34,6 +35,7 @@ const Hero = ({
         <div className="banner-wrapper">
           <div className="container-fluid">
             <div className="content">
+              {tag && <span>{tag}</span>}
               {title && <h1>{title}</h1>}
               {slider && (
                 <Swiper

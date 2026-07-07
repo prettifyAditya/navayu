@@ -1,10 +1,10 @@
-import "@/uploads/sass/footer/footer.css";
 import Image from "next/image";
 import Link from "next/link";
 import Overlay from "./Overlay";
 import VideoPop from "./VideoPop";
 import Hamburger from "./Hamburger";
 import EnquirePop from "./EnquirePop";
+import "@/uploads/sass/footer/footer.css";
 
 const Footer = () => {
   return (

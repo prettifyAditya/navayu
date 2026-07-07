@@ -16,9 +16,9 @@
     --textareaheight: 86px
     --paddingleftright: 0px
     &.white
-        --labelbefore: #FFFFFFB2
+        --labelbefore: #FFFFFF85
         --labelafter: var(--white)
-        --borderbefore: #FFFFFFB2
+        --borderbefore: #FFFFFF85
         --borderafter: var(--white)
         --color: var(--white)
         .form-group
@@ -26,6 +26,9 @@
                 caret-color: $white
                 &:-webkit-autofill
                     -webkit-text-fill-color: #fff !important
+        .custom-select
+            &::before
+                background-image: url(/icon/arrow-down-white.svg)
     .form-group
         position: relative
         flex: 0 1 100%

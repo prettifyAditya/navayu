@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import Button from "../../atoms/Button";
+import { useModal } from "@/hooks/useModal";
 
 export default function TreatmentHero() {
+  const { openModal } = useModal();
   return (
     <div className="banner treatmentDetails-banner">
       <div className="bg">
@@ -21,7 +24,12 @@ export default function TreatmentHero() {
               </p>
             </div>
             <div className="btn_wrap">
-              <Button variant="btn-gradient-b">Book a Consultation</Button>
+              <Button
+                variant="btn-gradient-b"
+                onClick={() => openModal("enquirePop")}
+              >
+                Book a Consultation
+              </Button>
               <Button variant="btn-white">
                 <Image
                   src="/icon/call_grad.svg"

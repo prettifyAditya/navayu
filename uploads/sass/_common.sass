@@ -250,6 +250,7 @@ img, video
     height: 100%
     max-width: 100%
     object-fit: cover
+    transition: .5s ease
 button,select
     font-family: inherit
     font-size: inherit
@@ -646,12 +647,15 @@ button
             path
                 fill: $black
     &.no-background
-        height: auto
-        width: auto
-        display: initial
         background: none
         border: none
+        box-shadow: none
         line-height: 0
+        svg, img
+            width: 100%
+            height: 100%
+            path
+                fill: $primary
         &:hover
             background: none
 

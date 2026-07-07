@@ -74,72 +74,6 @@
                 display: grid
                 grid-template-columns: repeat(3, 1fr)
                 grid-gap: 20px
-                .service_col
-                    overflow: hidden
-                    border-radius: 10px
-                    height: 340px
-                    &:hover
-                        figcaption
-                            transform: translateY(0)
-                            h6
-                                padding-bottom: 0
-                    &:hover
-                        figure
-                            img
-                                transform: scale(1.1)
-                    &::before
-                        background: linear-gradient(#0000,#000000b0)
-                        border-radius: inherit
-                    figure
-                        border-radius: inherit
-                        img
-                            border-radius: inherit
-                            transition: .8s ease
-                    figcaption
-                        padding: 0 30px 30px
-                        transition: .8s ease
-                        transform: translateY(158px)
-                        h6
-                            font-size: 20px
-                            color: $white
-                            font-weight: 600
-                            line-height: 1.2
-                            padding-bottom: 30px
-                            margin-bottom: 5px
-                            transition: .8s ease
-                        .desc
-                            padding-top: 10px
-                            position: relative
-                            display: flex
-                            flex-direction: column
-                            align-items: end
-                            &::before
-                                content: ""
-                                background-color: var(--white)
-                                width: 36px
-                                height: 3px
-                                position: absolute
-                                top: 0
-                                left: 0
-                            p
-                                @include line-clamp(3)
-                                color: #FFFFFFCC
-                                height: 70px
-                                overflow: hidden
-                            .btn
-                                margin-top: 10px
-                        .plus
-                            width: 45px
-                            height: 45px
-                            border-radius: 50%
-                            display: flex
-                            align-items: center
-                            justify-content: center
-                            color: $white
-                            background: linear-gradient(90deg, #6D5DCF, #13958F)
-                            svg, img
-                                width: 60%
-                                height: 60%
 
 .treatmentDetails-banner
     .bg
@@ -232,7 +166,7 @@
             img
                 border-radius: 10px
 
-.symptoms
+.symptoms.sec-pad-all
     background: #F2F3F6
     padding-bottom: 100px
     .heading
@@ -273,7 +207,100 @@
                     color: $text
                     @include line-clamp(4)
 
-.treatment_options
+.treatment_protocol
+    @include before(url("/image/treatment/ellipses_grad.svg"))
+    &::before
+        background-repeat: no-repeat
+        background-position: 0 -30%
+        background-size: 230px
+    .heading
+        text-align: center
+        h2
+            font-size: 36px
+            color: $primary
+    .main_wrapper
+        position: relative
+        @include before(linear-gradient(180deg, #e0ddff, #fff))
+        &::before
+            top: 30%
+            transform: translateY(-30%)
+            height: 50%
+            border-radius: 50%
+            filter: blur(20px)
+        .protocol_slider
+            padding: 150px 0 100px
+            .swiper-slide
+                transition: 1s ease
+                &:nth-child(2n + 1)
+                    .protocol_col
+                        background: linear-gradient(15deg, #85D5D4, #159390, #348887)
+                &:nth-child(2n + 2)
+                    .protocol_col
+                        background: linear-gradient(15deg, #6EBCF8, #287EBE, #1D4665)
+                &:nth-child(3n + 3)
+                    .protocol_col
+                        background: linear-gradient(15deg, #A292FD, #656DF6, #3F5AA6)
+                &.swiper-slide-next
+                    .protocol_col
+                        transform: rotate(10deg) translateY(40px)
+                &.swiper-slide-next + .swiper-slide
+                    .protocol_col
+                        transform: rotate(10deg) translateY(180px)
+                &.swiper-slide-prev
+                    .protocol_col
+                        transform: rotate(-10deg) translateY(40px)
+                &:has(+ .swiper-slide-prev)
+                    .protocol_col
+                        transform: rotate(-10deg) translateY(180px)
+            .protocol_col
+                max-width: 310px
+                width: 100%
+                height: 100%
+                background: linear-gradient(15deg, #85D5D4, #159390, #348887)
+                text-align: center
+                padding: 40px 30px
+                border-radius: 20px
+                box-shadow: 0 10px 12px 5px #00000029
+                transition: 1s ease
+                h6
+                    font-size: 20px
+                    font-weight: 600
+                    color: $white
+                    margin-bottom: 5px
+                p
+                    color: #FFFFFFB2
+                    font-weight: 300
+                figure
+                    margin: 40px auto 0
+                    width: 132px
+                    height: 132px
+        .nav_wrapper
+            margin: 50px auto 0
+            display: flex
+            align-items: center
+            gap: 15px
+            justify-content: center
+            position: relative
+            @include media(768)
+                margin: 40px auto 0
+            @include media(540)
+                margin: 30px auto 0
+                display: flex !important
+            .swiper-prev, .swiper-next
+                flex: 0 1 auto
+            .progressbar
+                flex: 1
+                width: 360px
+                max-width: 360px
+                position: relative
+                @include media(540)
+                    max-width: 180px
+                    height: 2px
+            .swiper-pagination-progressbar
+                --swiper-pagination-color: #686FF2
+                background: #66666636
+
+.treatment_options.sec-pad-all
     padding-bottom: 100px
     .heading
         text-align: center
@@ -337,7 +364,7 @@
     .btn_wrap
         justify-content: center
 
-.why_choose_us
+.why_choose_us.sec-pad-all
     padding: 70px 0 110px
     background: linear-gradient(90deg, #6D5DCF, #13958F)
     .heading
@@ -364,3 +391,123 @@
                 margin: 0 auto
                 color: #FFFFFFB2
                 line-height: 1.4
+
+.treatment_form
+    padding: 100px 0
+    background: var(--gradient-a)
+    .heading
+        max-width: 520px
+        margin: 0 auto 50px
+        text-align: center
+        h2
+            font-size: 36px
+            color: $white
+    .form.white
+        margin: 0 auto
+        max-width: 620px
+        --item: 2
+        --gaplr: 40px
+        .sbmt-grp
+            margin-top: 1rem
+            text-align: center
+
+.related_services
+    .heading
+        text-align: center
+        margin-bottom: 50px
+        h2
+            color: $primary
+            font-size: 36px
+    .related_wrapper
+        position: relative
+        .related_slider
+            max-width: 97%
+
+.benefits_sec
+    padding: 90px 0
+    background: #F7F7FC
+    z-index: 0
+    overflow: hidden
+    @include before(linear-gradient(180deg, #FFFFFF, #CDC7FF))
+    &::before
+        height: 50%
+        width: 50%
+        top: unset
+        bottom: -50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        border-radius: 50%
+        z-index: -1
+    .heading
+        max-width: 624px
+        margin: 0 auto 80px
+        text-align: center
+        h2
+            font-size: 36px
+            color: $primary
+        p
+            color: $text
+    .main_wrapper
+        display: flex
+        flex-wrap: wrap
+        align-items: start
+        --gap: 60px
+        gap: var(--gap)
+        &.active
+            figure
+                transform: translateY(0%)
+        figcaption
+            flex: 0 1 30%
+            max-width: 30%
+            width: 100%
+            display: flex
+            flex-direction: column
+            gap: 40px
+            transition: 1s ease
+            transition-delay: 2s
+            &:first-of-type
+                .benefit_col
+                    transform: translateX(-120%)
+                    &:nth-child(2)
+                        transition-delay: .8s
+                    &:nth-child(3)
+                        transition-delay: 1.8s
+            &:nth-of-type(2)
+                .benefit_col
+                    transform: translateX(120%)
+                    &:nth-child(2)
+                        transition-delay: .8s
+                    &:nth-child(3)
+                        transition-delay: 1.8s
+            &.active
+                .benefit_col
+                    transform: translateX(0)
+            .benefit_col
+                display: flex
+                flex-wrap: wrap
+                align-items: start
+                gap: 20px
+                transition: 1s ease
+                .icon
+                    flex: 0 1 auto
+                    width: 65px
+                    height: 65px
+                .details
+                    flex: 1
+                    h6
+                        font-size: 16px
+                        font-weight: 600
+                        color: $primary
+                        line-height: 1.2
+                        margin-bottom: 6px
+                    p
+                        font-size: 14px
+                        color: $text
+                        line-height: 1.2
+                        font-weight: 400
+        figure
+            flex: 1
+            max-width: calc( 40% - var(--gap) )
+            width: 100%
+            transition: 1s ease
+            transform: translateY(150%)
