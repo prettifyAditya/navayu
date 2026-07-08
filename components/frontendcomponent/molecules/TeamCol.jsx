@@ -1,10 +1,10 @@
 import Image from "next/image";
 import "@/uploads/sass/component/component.css";
 
-export default function TeamCol({ data }) {
+export default function TeamCol({ data, onClick }) {
   if (!data) return null;
   return (
-    <div className="team_col item-md">
+    <div className="team_col item-md" onClick={onClick}>
       <figure>
         <Image
           src={data.imgSrc}

@@ -1,10 +1,14 @@
+"use client";
 import Image from "next/image";
 import Button from "../../atoms/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { useModal } from "@/hooks/useModal";
+import TeamCol from "../../molecules/TeamCol";
 
 export default function Experts() {
+  const { openModal } = useModal();
   return (
     <section>
       <div className="experts_sec">
@@ -51,20 +55,7 @@ export default function Experts() {
               >
                 {expertsData.map((data) => (
                   <SwiperSlide key={data.id}>
-                    <div className="team_col item-md">
-                      <figure>
-                        <Image
-                          src={data.imgSrc}
-                          width={280}
-                          height={373}
-                          alt={`${data.name}'s Image`}
-                        ></Image>
-                      </figure>
-                      <figcaption>
-                        <h6>{data.name}</h6>
-                        <p>{data.role}</p>
-                      </figcaption>
-                    </div>
+                    <TeamCol data={data} onClick={() => openModal("teamPop")} />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -86,20 +77,7 @@ export default function Experts() {
               >
                 {expertsData.map((data) => (
                   <SwiperSlide key={data.id}>
-                    <div className="team_col item-md">
-                      <figure>
-                        <Image
-                          src={data.imgSrc}
-                          width={280}
-                          height={373}
-                          alt={`${data.name}'s Image`}
-                        ></Image>
-                      </figure>
-                      <figcaption>
-                        <h6>{data.name}</h6>
-                        <p>{data.role}</p>
-                      </figcaption>
-                    </div>
+                    <TeamCol data={data} onClick={() => openModal("teamPop")} />
                   </SwiperSlide>
                 ))}
               </Swiper>

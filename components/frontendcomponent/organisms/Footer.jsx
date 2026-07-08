@@ -5,6 +5,7 @@ import VideoPop from "./VideoPop";
 import Hamburger from "./Hamburger";
 import EnquirePop from "./EnquirePop";
 import "@/uploads/sass/footer/footer.css";
+import TeamPop from "./TeamPop";
 
 const Footer = () => {
   return (
@@ -114,6 +115,7 @@ const Footer = () => {
       <VideoPop />
       <Hamburger />
       <EnquirePop />
+      <TeamPop />
     </>
   );
 };

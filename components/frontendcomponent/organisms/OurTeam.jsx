@@ -1,6 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useModal } from "@/hooks/useModal";
 import "swiper/css";
 import "swiper/css/navigation";
 import TeamCol from "../molecules/TeamCol";
@@ -8,6 +9,7 @@ import SwiperButton from "../atoms/SwiperButton";
 import "@/uploads/sass/component/component.css";
 
 export default function OurTeam() {
+  const { openModal } = useModal();
   return (
     <section>
       <div className="our_team sec-pad-all">
@@ -34,7 +36,7 @@ export default function OurTeam() {
             >
               {teamData.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <TeamCol data={item} />
+                  <TeamCol data={item} onClick={() => openModal("teamPop")} />
                 </SwiperSlide>
               ))}
             </Swiper>

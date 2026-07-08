@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import Input from "../atoms/Input";
 import Select from "../atoms/Select";
 import Textarea from "../atoms/Textarea";
 import Button from "../atoms/Button";
+import Input from "../atoms/Input";
 
 export default function FormWrapper({ classname = "" }) {
   const [formData, setFormData] = useState({

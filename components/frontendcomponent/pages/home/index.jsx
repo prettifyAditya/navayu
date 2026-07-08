@@ -9,8 +9,10 @@ import HealingVoice from "./HealingVoice";
 import EnquireNow from "./EnquireNow";
 import TreatmentSec from "./TreatmentSec";
 import "@/uploads/sass/home/home.css";
+import { useModal } from "@/hooks/useModal";
 
 const Home = () => {
+  const { openModal } = useModal();
   return (
     <>
       <Hero
@@ -18,9 +20,7 @@ const Home = () => {
         video="/video/home-banner.mp4"
         poster="/images/hero-banner-poster.png"
         button={{
-          onClick: () => {
-            console.log("clicked");
-          },
+          onClick: () => openModal("enquirePop"),
           label: "Book a Consultation",
         }}
         slider={[

@@ -1,0 +1,75 @@
+@import "../_common"
+
+.faq_sec
+    background: #F7F7FC
+    .faq_wrapper
+        max-width: 770px
+        margin: 0 auto
+        .faq_col
+            border: 1px solid #E4E4E4
+            background: $white
+            border-radius: 10px
+            &:not(:last-child)
+                margin-bottom: 18px
+            &.active
+                .faq_title
+                    h4
+                        color: $black
+                    .icon
+                        --bgcolor: var(--black)
+                        &::after
+                            transform: scaleY(0)
+                article
+                    grid-template-rows: 1fr
+                    opacity: 1
+            .faq_title
+                position: relative
+                cursor: pointer
+                display: flex
+                flex-wrap: wrap
+                align-items: center
+                gap: 20px
+                overflow: hidden
+                padding: 20px
+                h4
+                    font-size: 16px
+                    font-weight: 600
+                    color: $text
+                    transition: .5s ease
+                .icon
+                    margin-left: auto
+                    --size: 18px
+                    --border: 2px
+                    --bgcolor: var(--text)
+                    width: var(--size)
+                    height: var(--size)
+                    flex: 0 1 auto
+                    position: relative
+                    @include before(var(--bgcolor))
+                    @include after(var(--bgcolor))
+                    &::before,&::after
+                        transition: .5s ease
+                    &::before
+                        top: calc(var(--size) / 2 - var(--border) / 2)
+                        bottom: auto
+                        height: var(--border)
+                        width: 100%
+                    &::after
+                        left: calc(var(--size) / 2)
+                        translate: -50% 0
+                        right: auto
+                        width: var(--border)
+                        height: 100%
+            article
+                display: grid
+                grid-template-rows: 0fr
+                opacity: 0
+                transition: .5s ease
+                .faq_details
+                    padding: 0
+                    overflow: hidden
+                p
+                    font-size: 14px
+                    font-weight: 400
+                    color: $text
+                    padding: 0 20px 20px

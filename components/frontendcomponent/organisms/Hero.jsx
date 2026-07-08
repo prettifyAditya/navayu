@@ -16,7 +16,7 @@ const Hero = ({
   slider,
   isHome,
 }) => {
-  const { label, href, onClick } = button;
+  const { label, href, onClick } = button || {};
 
   return (
     <section className={`banner hero-banner ${className}`}>
@@ -59,12 +59,12 @@ const Hero = ({
                   })}
                 </Swiper>
               )}
-              {href && (
+              {label && href && (
                 <Button href={href} variant="btn-gradient-b">
                   {label}
                 </Button>
               )}
-              {onClick && (
+              {label && onClick && (
                 <Button onClick={onClick} variant="btn-gradient-b">
                   {label}
                 </Button>
