@@ -1,21 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Button from "../../atoms/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
+const ANGLE_STEP = 60;
+const DOT_COUNT = 6;
+
 export default function TreatmentSec() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const rotationSteps = useRef(0);
+
+  const [rotation, setRotation] = useState(0);
+
   return (
     <div className="treatment_sec">
       <div className="circle_wrapper">
         <h6 className="title">Treatments</h6>
-        <div className="dots"></div>
-        <div className="dots"></div>
-        <div className="dots"></div>
-        <div className="dots"></div>
+        <div
+          className="circle_rotater"
+          style={{ transform: `rotate(${rotation}deg)` }}
+        >
+          {Array.from({ length: DOT_COUNT }).map((_, i) => {
+            // which dot slot is "active" right now, given accumulated rotation
+            const activeSlot =
+              ((-rotationSteps.current % DOT_COUNT) + DOT_COUNT) % DOT_COUNT;
+            const isActive = i === activeSlot;
+            return (
+              <div key={i} className={`dots${isActive ? " active" : ""}`} />
+            );
+          })}
+        </div>
       </div>
       <div className="content_wrapper">
         <Swiper
@@ -36,7 +53,11 @@ export default function TreatmentSec() {
           }}
           modules={[Autoplay]}
           speed={2000}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.realIndex);
+            rotationSteps.current += 1; // always increments, direction never reverses
+            setRotation(-rotationSteps.current * ANGLE_STEP);
+          }}
           loop={true}
         >
           {treatments.map((item, i) => (

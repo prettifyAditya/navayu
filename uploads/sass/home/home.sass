@@ -335,6 +335,30 @@
         border: 1px solid #CFCFCF
         --dot: 30px
         pointer-events: none
+        z-index: 2
+        .circle_rotater
+            position: absolute
+            width: 100%
+            height: 100%
+            inset: 0
+            border-radius: 50%
+            transition: 3s ease
+            .dots
+                position: absolute
+                top: 50%
+                left: 50%
+                width: var(--dot)
+                height: var(--dot)
+                margin-top: calc(var(--dot) / -2)
+                margin-left: calc(var(--dot) / -2)
+                border-radius: 50%
+                background: #D24343
+                filter: blur(10)
+                transition: .5s ease
+                @for $i from 1 through 6
+                    &:nth-child(#{$i})
+                        $angle: ($i - 1) * 60deg
+                        transform: rotate(#{$angle}) translateX(33vw) rotate(#{-$angle})
         .title
             font-size: 16px
             font-weight: 400
@@ -343,16 +367,16 @@
             top: 50%
             right: 30%
             transform: translate(30%, -50%)
-        .dots
-            position: absolute
-            width: var(--dot)
-            height: var(--dot)
-            border-radius: 50%
-            top: 50%
-            right: calc( var(--dot) * .5 * -1 )
-            transform: translateY(-50%)
-            background: #D24343
-            filter: blur(10)
+        // .dots
+        //     position: absolute
+        //     width: var(--dot)
+        //     height: var(--dot)
+        //     border-radius: 50%
+        //     top: 50%
+        //     right: calc( var(--dot) * .5 * -1 )
+        //     transform: translateY(-50%)
+        //     background: #D24343
+        //     filter: blur(10)
     .content_wrapper
         width: 100%
         height: 100%
