@@ -32,7 +32,9 @@ export default function DirectorMessage() {
             <div className="below_wrap">
               <button
                 className="play-btn"
-                onClick={() => openModal("video", "/video/healing1.mp4")}
+                onClick={() =>
+                  openModal("video", { modalVideo: "/video/healing1.mp4" })
+                }
               ></button>
               <div className="director_details">
                 <h6>Dr. Sunil Saini</h6>

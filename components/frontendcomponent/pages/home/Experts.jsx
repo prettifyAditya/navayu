@@ -55,7 +55,10 @@ export default function Experts() {
               >
                 {expertsData.map((data) => (
                   <SwiperSlide key={data.id}>
-                    <TeamCol data={data} onClick={() => openModal("teamPop")} />
+                    <TeamCol
+                      data={data}
+                      onClick={() => openModal("teamPop", data)}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -77,7 +80,10 @@ export default function Experts() {
               >
                 {expertsData.map((data) => (
                   <SwiperSlide key={data.id}>
-                    <TeamCol data={data} onClick={() => openModal("teamPop")} />
+                    <TeamCol
+                      data={data}
+                      onClick={() => openModal("teamPop", data)}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -95,23 +101,131 @@ const expertsData = [
     name: "Dr. Sunil Saini",
     role: "MBBS, MS (Orthopedics), Trauma & Ilizarov Surgeon",
     imgSrc: "/image/others/team1.jpg",
+    details: `<p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p> <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p>`,
   },
   {
     id: 2,
     name: "Name Here",
     role: "MBBS, MS (Orthopedics)",
     imgSrc: "/image/others/team2.jpg",
+    details: `<p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p> <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p>`,
   },
   {
     id: 3,
     name: "Name Here",
     role: "MBBS, MS (Orthopedics)",
     imgSrc: "/image/others/team3.jpg",
+    details: `<p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p> <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p>`,
   },
   {
     id: 4,
     name: "Name Here",
     role: "MBBS, MS (Orthopedics)",
     imgSrc: "/image/others/team4.jpg",
+    details: `<p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p> <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis
+      distinctio a fugiat similique quis in inventore? Quaerat ut eius
+      architecto sequi autem eos accusamus consequatur non? Ab quidem
+      facere vitae sunt ipsa possimus tenetur, dolorum maiores alias
+      obcaecati doloribus sint, cumque nemo architecto ea minus? Nam
+      doloribus architecto, blanditiis laudantium dicta facere iure
+      ipsum voluptatem itaque adipisci praesentium reprehenderit autem
+      officia ullam eaque porro dolore accusamus, provident iste
+      natus. Veritatis perferendis debitis voluptate commodi error
+      tempore ab, repellendus reiciendis quas nesciunt velit impedit
+      corporis suscipit cum unde soluta! Nihil dolorum deleniti
+      incidunt veniam velit culpa, nulla in maiores quas a.
+    </p>`,
   },
 ];

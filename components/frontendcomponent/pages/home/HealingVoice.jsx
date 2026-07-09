@@ -45,6 +45,7 @@ export default function HealingVoice() {
                 className="healing_slider"
                 centeredSlides={true}
                 centeredSlidesBounds={true}
+                speed={1000}
                 navigation={{
                   prevEl: `.healing-prev-${data.id}`,
                   nextEl: `.healing-next-${data.id}`,
@@ -69,7 +70,9 @@ export default function HealingVoice() {
                         <button
                           type="button"
                           className="play-btn"
-                          onClick={() => openModal("video", item.videoPopSrc)}
+                          onClick={() =>
+                            openModal("video", { modalVideo: item.videoPopSrc })
+                          }
                         ></button>
                       </figure>
                       <figcaption>

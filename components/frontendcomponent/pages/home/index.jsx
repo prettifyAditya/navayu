@@ -18,7 +18,7 @@ const Home = () => {
       <Hero
         className="home-hero"
         video="/video/home-banner.mp4"
-        poster="/images/hero-banner-poster.png"
+        poster="/video/home-banner.png"
         button={{
           onClick: () => openModal("enquirePop"),
           label: "Book a Consultation",

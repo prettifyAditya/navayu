@@ -38,7 +38,7 @@ const Header = () => {
             <div className="dropdown-menu">
               <ul>
                 <li>
-                  <Link href="">
+                  <Link href="/treatments">
                     <Image
                       src="/icon/category1.svg"
                       alt="category1"
@@ -55,7 +55,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="">
+                  <Link href="/treatments">
                     <Image
                       src="/icon/category2.svg"
                       alt="category1"
@@ -72,7 +72,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="">
+                  <Link href="/treatments">
                     <Image
                       src="/icon/category3.svg"
                       alt="category1"

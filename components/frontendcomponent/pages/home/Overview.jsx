@@ -25,7 +25,7 @@ const Overview = () => {
           <div className="middle">
             <video
               src="/video/home-banner.mp4"
-              poster="/images/hero-banner.png"
+              poster="/video/home-banner.png"
               playsInline
               autoPlay
               muted

@@ -1,40 +1,12 @@
 "use client";
 import { useModal } from "@/hooks/useModal";
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function VideoPop() {
-  const [videoSrc, setVideoSrc] = useState("");
-
   const { isModal, modalData } = useSelector((state) => state.modal);
+  const { modalVideo } = modalData || {};
+
   const { closeModal } = useModal();
-
-  const handleCloseVideo = () => {
-    setVideoSrc("");
-    closeVideo();
-  };
-
-  useEffect(() => {
-    const handleClick = (event) => {
-      const videoTarget = event.target.closest("[data-video]");
-
-      if (videoTarget) {
-        let src = videoTarget.getAttribute("data-video");
-
-        if (src.includes("youtube.com/embed/")) {
-          const videoId = src.split("embed/")[1].split("?")[0];
-          src += `&autoplay=1&mute=1&loop=1&playlist=${videoId}`;
-        } else if (src.includes("vimeo.com/video/")) {
-          src = src.split("?")[0];
-          src += `?autoplay=1&muted=1&loop=1&background=1`;
-        }
-        setVideoSrc(src);
-      }
-    };
-
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
 
   return (
     <div className={`model video-pop ${isModal === "video" ? "is-open" : ""}`}>
@@ -55,12 +27,12 @@ export default function VideoPop() {
             />
           </svg>
         </button>
-        {modalData && (
+        {modalVideo && (
           <iframe
             id="iframe1"
             allow="autoplay;fullscreen"
             allowFullScreen
-            src={modalData}
+            src={modalVideo}
           />
         )}
       </div>
