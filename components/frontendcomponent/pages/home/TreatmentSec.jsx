@@ -10,10 +10,13 @@ const ANGLE_STEP = 60;
 const DOT_COUNT = 6;
 
 export default function TreatmentSec() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const rotationSteps = useRef(0);
+  const prevRealIndex = useRef(0);
 
   const [rotation, setRotation] = useState(0);
+
+  const stepsRotated = Math.round(-rotation / ANGLE_STEP);
+  const activeSlot = ((stepsRotated % DOT_COUNT) + DOT_COUNT) % DOT_COUNT;
 
   return (
     <div className="treatment_sec">
@@ -23,20 +26,18 @@ export default function TreatmentSec() {
           className="circle_rotater"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
-          {Array.from({ length: DOT_COUNT }).map((_, i) => {
-            // which dot slot is "active" right now, given accumulated rotation
-            const activeSlot =
-              ((-rotationSteps.current % DOT_COUNT) + DOT_COUNT) % DOT_COUNT;
-            const isActive = i === activeSlot;
-            return (
-              <div key={i} className={`dots${isActive ? " active" : ""}`} />
-            );
-          })}
+          {Array.from({ length: DOT_COUNT }).map((_, i) => (
+            <div
+              key={i}
+              className={`dots${i === activeSlot ? " active" : ""}`}
+            />
+          ))}
         </div>
       </div>
       <div className="content_wrapper">
         <Swiper
           className="content_slider"
+          loop={true}
           direction="vertical"
           allowTouchMove={false}
           centeredSlides={true}
@@ -54,11 +55,13 @@ export default function TreatmentSec() {
           modules={[Autoplay]}
           speed={2000}
           onSlideChange={(swiper) => {
-            setActiveIndex(swiper.realIndex);
-            rotationSteps.current += 1; // always increments, direction never reverses
+            const newIndex = swiper.realIndex;
+            if (newIndex === prevRealIndex.current) return;
+
+            rotationSteps.current += 1;
             setRotation(-rotationSteps.current * ANGLE_STEP);
+            prevRealIndex.current = newIndex;
           }}
-          loop={true}
         >
           {treatments.map((item, i) => (
             <SwiperSlide key={i}>

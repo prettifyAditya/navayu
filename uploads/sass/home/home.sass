@@ -344,7 +344,7 @@
             height: 100%
             inset: 0
             border-radius: 50%
-            transition: 3s ease
+            transition: 2s ease
             .dots
                 position: absolute
                 top: 50%
@@ -355,12 +355,17 @@
                 margin-left: calc(var(--dot) / -2)
                 border-radius: 50%
                 background: #D24343
-                filter: blur(10)
-                transition: .5s ease
+                filter: blur(5)
+                transition: 1s ease
                 @for $i from 1 through 6
                     &:nth-child(#{$i})
                         $angle: ($i - 1) * 60deg
-                        transform: rotate(#{$angle}) translateX(33vw) rotate(#{-$angle})
+                        transform: rotate(#{$angle}) translateX(33vw) rotate(#{-$angle}) scale(.5)
+                &.active
+                    @for $i from 1 through 6
+                        &:nth-child(#{$i})
+                            $angle: ($i - 1) * 60deg
+                            transform: rotate(#{$angle}) translateX(33vw) rotate(#{-$angle}) scale(1)
         .title
             font-size: 16px
             font-weight: 400

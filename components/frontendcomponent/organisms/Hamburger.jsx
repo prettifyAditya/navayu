@@ -45,10 +45,14 @@ export default function Hamburger() {
         </div>
         <div className="nav-list">
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" onClick={closeModal}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="/">About Us</Link>
+            <Link href="/about-us" onClick={closeModal}>
+              About Us
+            </Link>
           </li>
           <li
             className={`hasDropdown ${activeDropdown === "treatments" ? "active" : ""}`}
@@ -76,18 +80,28 @@ export default function Hamburger() {
             <div className="dropdown-menu-ham">
               <ul>
                 <li>
-                  <Link href="">Spine & Joint Care</Link>
-                  <Link href="">Wellness, Anti-ageing & Longevity</Link>
-                  <Link href="">Metabolic & Lifestyle Disease</Link>
+                  <Link href="/treatments" onClick={closeModal}>
+                    Spine & Joint Care
+                  </Link>
+                  <Link href="/treatments" onClick={closeModal}>
+                    Wellness, Anti-ageing & Longevity
+                  </Link>
+                  <Link href="/treatments" onClick={closeModal}>
+                    Metabolic & Lifestyle Disease
+                  </Link>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <Link href="/">FAQ's</Link>
+            <Link href="/faqs" onClick={closeModal}>
+              FAQ's
+            </Link>
           </li>
           <li>
-            <Link href="/">Contact Us</Link>
+            <Link href="/contact-us" onClick={closeModal}>
+              Contact Us
+            </Link>
           </li>
         </div>
         <div className="bottom-list">

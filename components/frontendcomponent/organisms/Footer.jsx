@@ -146,15 +146,15 @@ const footerLink = [
     list: [
       {
         label: "Spine & Joint Care",
-        path: "",
+        path: "/treatments",
       },
       {
         label: "Wellness, Anti-ageing & Longevity",
-        path: "",
+        path: "/treatments",
       },
       {
         label: "Metabolic & Lifestyle Disease",
-        path: "",
+        path: "/treatments",
       },
     ],
   },
@@ -163,19 +163,19 @@ const footerLink = [
     list: [
       {
         label: "About us",
-        path: "",
+        path: "/about-us",
       },
       {
         label: "Contact us",
-        path: "",
+        path: "/contact-us",
       },
       {
         label: "FAQ's",
-        path: "",
+        path: "/faqs",
       },
       {
         label: "Blogs",
-        path: "",
+        path: "/blog-listing",
       },
       {
         label: "Privacy Policy",
