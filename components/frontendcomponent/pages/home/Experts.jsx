@@ -49,12 +49,29 @@ export default function Experts() {
                   pauseOnMouseEnter: true,
                 }}
                 breakpoints={{
+                  0: {
+                    autoplay: false,
+                    allowTouchMove: true,
+                    slidesPerView: 1.3,
+                    spaceBetween: 15,
+                    direction: "horizontal",
+                    speed: 1000,
+                  },
+                  540: {
+                    autoplay: false,
+                    allowTouchMove: true,
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                    direction: "horizontal",
+                    speed: 1000,
+                  },
                   768: {
                     autoplay: false,
                     allowTouchMove: true,
                     slidesPerView: 3,
                     spaceBetween: 20,
                     direction: "horizontal",
+                    speed: 1500,
                   },
                   991: {
                     slidesPerView: 1.4,

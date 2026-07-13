@@ -3,6 +3,8 @@
 .home-secB
     display: grid
     grid-template-columns: repeat(2, 1fr)
+    @include media(768)
+        grid-template-columns: 1fr
     .left
         background: linear-gradient(90deg, #6D5DCF 0%, #13958F 100%)
         padding: 50px 100px 50px 50px
@@ -13,6 +15,10 @@
             padding: 45px 55px 45px 40px
         @include media(991)
             padding: 40px 50px 40px 40px
+        @include media(768)
+            padding: 40px 30px
+        @include media(540)
+            padding: 35px 20px
         h2
             @include font(700)
             color: $white
@@ -28,6 +34,12 @@
             @include media(991)
                 font-size: 42px
                 margin-bottom: 20px
+            @include media(768)
+                font-size: 36px
+                margin-bottom: 15px
+            @include media(540)
+                font-size: 28px
+                margin-bottom: 12px
         p
             color: white
         a
@@ -36,6 +48,8 @@
                 margin-top: 50px
             @include media(991)
                 margin-top: 30px
+            @include media(768)
+                margin-top: 25px
 
 .home-secC
     padding: 70px 0
@@ -52,6 +66,9 @@
             align-items: center
             @include media(1280)
                 grid-template-columns: 1fr .9fr .8fr
+            @include media(768)
+                grid-template-columns: 1fr
+                gap: 20px
             .left
                 height: fit-content
                 h6
@@ -64,6 +81,11 @@
                         margin-bottom: 28px
                     @include media(991)
                         margin-bottom: 25px
+                    @include media(768)
+                        margin-bottom: 15px
+                        font-size: 18px
+                    @include media(540)
+                        margin-bottom: 12px
                 h2
                     font-size: 48px
                     line-height: 48px
@@ -79,6 +101,13 @@
                     @include media(991)
                         font-size: 32px
                         padding-left: 20px
+                    @include media(768)
+                        font-size: 28px
+                        padding-left: 15px
+                        border-width: 3px
+                    @include media(540)
+                        font-size: 26px
+                        line-height: 1.1
                 .stat
                     margin-top: 52px
                     display: grid
@@ -89,6 +118,11 @@
                         gap: 15px
                     @include media(991)
                         margin-top: 25px
+                    @include media(768)
+                        margin: 20px auto 0
+                        max-width: 98%
+                    @include media(540)
+                        max-width: 100%
                     .item
                         p
                             color: $text
@@ -108,7 +142,12 @@
                                 margin-bottom: 5px
                             @include media(991)
                                 font-size: 24px
+                            @include media(540)
+                                font-size: 22px
+                                margin-bottom: 3px
             .middle
+                @include media(768)
+                    order: -1
                 video
                     width: 100%
                     height: 519px
@@ -116,6 +155,8 @@
                         height: 450px
                     @include media(991)
                         height: 300px
+                    @include media(540)
+                        height: 250px
                     object-fit: cover
                     -webkit-mask-image: url(../../../public/vector/icon-color.svg)
                     mask-image: url(../../../public/vector/icon-color.svg)
@@ -129,12 +170,16 @@
                 height: fit-content
                 @include media(991)
                     margin-left: 20px
+                @include media(768)
+                    margin: 0
                 p
                     color: $text
                 .btn
                     margin-top: 24px
                     @include media(991)
                         margin-top: 20px
+                    @include media(540)
+                        margin-top: 15px
 
 .home-secD
     position: relative
@@ -142,6 +187,8 @@
     overflow: hidden
     @include media(1280)
         height: 80vh
+    @include media(540)
+        height: 410px
     video
         width: 100%
         height: 100%
@@ -165,6 +212,11 @@
             padding: 70px var(--containerfluid)
         @include media(991)
             padding: 50px var(--containerfluid)
+        @include media(768)
+            padding: 40px var(--containerfluid)
+        @include media(540)
+            padding: 30px var(--containerfluid)
+            grid-template-columns: 1fr
         .left
             h2
                 @include font(700)
@@ -174,20 +226,37 @@
                     font-size: 42px
                 @include media(991)
                     font-size: 36px
+                @include media(768)
+                    font-size: 32px
+                @include media(540)
+                    font-size: 28px
+                    text-align: center
         .right
             display: flex
             flex-direction: column
             justify-content: end
+            @include media(540)
+                justify-content: start
+                text-align: center
             p
                 color: $white
                 font-size: 24px
                 @include font(600)
                 @include media(991)
                     font-size: 22px
+                @include media(768)
+                    font-size: 20px
+                @include media(540)
+                    font-size: 18px
+                    font-weight: 500
             .btn
                 margin-top: 32px
                 @include media(1280)
                     margin-top: 25px
+                @include media(768)
+                    margin-top: 20px
+                @include media(540)
+                    margin: 20px auto 0
 
 .experts_sec
     padding-top: 100px
@@ -195,6 +264,8 @@
         padding-top: 80px
     @include media(991)
         padding: 50px 0
+    @include media(768)
+        padding: 40px 0
     .main_wrapper
         --gap: 50px
         gap: var(--gap)
@@ -229,12 +300,20 @@
                 @include media(991)
                     max-width: 600px
                     margin: 15px auto 0
+                @include media(768)
+                    max-width: 460px
+                @include media(540)
+                    margin: 10px auto 0
             .btn
                 margin-top: 60px
                 @include media(1280)
                     margin-top: 40px
                 @include media(991)
                     margin-top: 25px
+                @include media(768)
+                    margin-top: 20px
+                @include media(540)
+                    margin-top: 15px
         .experts_wrapper
             flex: 1
             max-width: 50%
@@ -252,6 +331,8 @@
                 max-width: 100%
                 height: 100%
                 gap: 25px
+            @include media(540)
+                gap: 0
             .expert_slider
                 flex: 1
                 max-width: 50%
@@ -273,9 +354,17 @@
         background-position: 99% 100%
         @include media(1280)
             background-size: 20%
+        @include media(768)
+            background-size: 40%
+        @include media(540)
+            display: none
     @include media(1280)
         padding-top: 50px
+    @include media(768)
+        padding-top: 40px
     .main_wrapper
+        position: relative
+        z-index: 1
         --gap: 100px
         gap: var(--gap)
         justify-content: space-between
@@ -284,17 +373,30 @@
         @include media(991)
             --gap: 40px
             align-items: flex-end
+        @include media(540)
+            --gap: 35px
         figure
             flex: 0 1 auto
             max-width: 35%
             width: 100%
             line-height: 0
+            @include media(768)
+                flex: 0 1 100%
+                order: 1
+                max-width: 50%
+                margin: 0 auto
+            @include media(540)
+                max-width: 70%
         figcaption
             flex: 1
             max-width: 70%
             width: 100%
             @include media(991)
                 padding-bottom: 50px
+            @include media(768)
+                flex: 0 1 100%
+                max-width: 100%
+                padding-bottom: 0
             h4
                 margin-top: 60px
                 color: $white
@@ -303,8 +405,15 @@
                 @include media(991)
                     margin-top: 0
                     font-size: 32px
+                @include media(768)
+                    font-size: 28px
+                    line-height: 1.2
+                @include media(540)
+                    font-size: 24px
             .desc
                 margin-top: 20px
+                @include media(768)
+                    margin-top: 18px
                 *
                     color: $white
                 p
@@ -321,6 +430,11 @@
                 @include media(991)
                     margin-top: 30px
                     gap: 20px
+                @include media(768)
+                    margin-top: 25px
+                @include media(540)
+                    margin-top: 20px
+                    gap: 15px
                 .play-btn
                     flex: 0 1 auto
                 .director_details
@@ -331,9 +445,14 @@
                         font-size: 24px
                         @include media(991)
                             font-size: 22px
+                        @include media(540)
+                            font-size: 18px
+                            margin-bottom: 5px
                     p
                         font-size: 14px
                         color: $white
+                        @include media(540)
+                            font-size: 12px
 
 .healing_voice
     background: #F4F4F4
@@ -348,16 +467,31 @@
         @include media(1280)
             gap: 25px
             margin-bottom: 50px
+        @include media(768)
+            gap: 20px
+            margin-bottom: 40px
+        @include media(540)
+            margin-bottom: 30px
         .heading
             max-width: 318px
             @include media(1280)
                 flex: 0 1 100%
+            @include media(768)
+                max-width: 280px
+            @include media(540)
+                text-align: center
+                margin: 0 auto
+                max-width: 240px
             h2
                 font-size: 36px
                 color: $primary
                 line-height: 1
                 @include media(991)
                     font-size: 32px
+                @include media(768)
+                    font-size: 28px
+                @include media(540)
+                    font-size: 24px
         .tab-nav
             display: flex
             flex-wrap: wrap
@@ -365,6 +499,12 @@
             gap: 20px
             @include media(991)
                 flex-wrap: nowrap
+            @include media(768)
+                overflow-x: auto
+                @include scrollbar($width: 3px)
+                gap: 15px
+            @include media(540)
+                gap: 12px
             li
                 cursor: pointer
                 display: flex
@@ -377,6 +517,11 @@
                 @include media(991)
                     padding: 10px 15px
                     border-radius: 5px
+                @include media(768)
+                    padding: 8px 12px
+                @include media(540)
+                    padding: 4px 10px
+                    gap: 6px
                 &.active
                     background: var(--gradient-a)
                     .icon
@@ -387,12 +532,20 @@
                     flex: 0 1 auto
                     width: 35px
                     height: 35px
+                    @include media(768)
+                        width: 30px
+                        height: 30px
                 p
                     flex: 1
                     line-height: 1.2
                     color: $primary
                     font-weight: 500
                     transition: .5s ease
+                    @include media(768)
+                        font-size: 14px
+                    @include media(540)
+                        font-size: 12px
+                        white-space: nowrap
 
     .healing_wrapper
         .tabs
@@ -427,16 +580,22 @@
                         padding: 20px
                         @include media(1280)
                             padding: 15px
+                        @include media(540)
+                            padding: 15px 12px
                         h6
                             font-size: 16px
                             line-height: 1.3
                             font-weight: 500
+                            @include media(540)
+                                font-size: 14px
 
     .btn_wrap
         margin-top: 50px
         justify-content: center
         @include media(1280)
             margin-top: 40px
+        @include media(540)
+            margin-top: 30px
 
 .enquire_now
     padding: 100px 0
@@ -444,6 +603,8 @@
         padding: 60px 0
     @include media(991)
         padding: 50px 0
+    @include media(540)
+        padding: 40px 0
     .main_wrapper
         --gap: 80px
         gap: var(--gap)
@@ -452,22 +613,35 @@
             --gap: 50px
         @include media(991)
             --gap: 30px
+        @include media(540)
+            --gap: 25px
         figure
             flex: 1
             max-width: 50%
             width: 100%
             @include media(991)
                 max-width: 45%
+            @include media(768)
+                flex: 0 1 100%
+                max-width: 100%
         .form_wrapper
             flex: 1
             max-width: 50%
             width: 100%
             @include media(991)
                 max-width: 55%
+            @include media(768)
+                flex: 0 1 100%
+                max-width: 100%
             .heading
                 max-width: 431px
                 margin-bottom: 30px
                 @include media(991)
+                    margin-bottom: 25px
+                @include media(768)
+                    max-width: 380px
+                    margin-bottom: 20px
+                @include media(540)
                     margin-bottom: 25px
                 h2
                     color: $primary
@@ -477,11 +651,16 @@
                         font-size: 32px
                     @include media(991)
                         font-size: 28px
+                    @include media(540)
+                        font-size: 24px
             .form.home-form
                 --item: 2
                 --gaplr: 40px
                 @include media(991)
                     --gaplr: 20px
+                @include media(540)
+                    --item: 1
+                    --gaptb: 25px
                 .sbmt-grp
                     margin-top: 1rem
                     text-align: center
@@ -497,6 +676,8 @@
     overflow: hidden
     @include media(991)
         max-height: 80vh
+    @include media(540)
+        max-height: 520px
     .circle_wrapper
         position: absolute
         left: -80%
@@ -516,6 +697,13 @@
             --y-position: 60vw
         @include media(991)
             // display: none
+        @include media(768)
+            --dot: 25px
+        @include media(540)
+            --x-position: 70vw
+            --y-position: 70vw
+            left: -98%
+            --dot: 22px
         .circle_rotater
             position: absolute
             width: 100%
@@ -555,6 +743,11 @@
             @include media(1280)
                 right: 20%
                 transform: translate(20%, -50%)
+            @include media(768)
+                right: 18%
+            @include media(540)
+                font-size: 12px
+                right: 14%
     .content_wrapper
         width: 100%
         height: 100%
@@ -596,6 +789,10 @@
                 transition: 1s ease
                 @include media(1336)
                     padding: 30px var(--containerfluid) 20px
+                @include media(768)
+                    padding: 25px var(--containerfluid) 20px
+                @include media(540)
+                    padding: 20px var(--containerfluid)
                 .count
                     background: $white
                     font-size: 32px
@@ -609,6 +806,12 @@
                         font-size: 28px
                         top: -20px
                         left: 40%
+                    @include media(768)
+                        font-size: 24px
+                    @include media(540)
+                        font-size: 20px
+                        top: -15px
+                        left: 55%
                 .content_details
                     display: flex
                     flex-wrap: wrap
@@ -617,6 +820,8 @@
                     gap: var(--gap)
                     @include media(1280)
                         --gap: 35px
+                    @include media(768)
+                        --gap: 0
                     figcaption
                         flex: 1
                         max-width: 360px
@@ -624,6 +829,10 @@
                             max-width: 500px
                         @include media(991)
                             max-width: 450px
+                        @include media(768)
+                            max-width: 330px
+                        @include media(540)
+                            max-width: 210px
                         h4
                             font-size: 36px
                             color: $primary
@@ -633,6 +842,11 @@
                                 font-size: 32px
                             @include media(991)
                                 font-size: 28px
+                            @include media(768)
+                                font-size: 24px
+                            @include media(540)
+                                font-size: 20px
+                                margin-bottom: 6px
                         .desc
                             height: 100px
                             overflow-y: auto
@@ -648,10 +862,16 @@
                                     margin-bottom: 10px
                                 @include media(991)
                                     @include line-clamp(5)
+                                @include media(768)
+                                    font-size: 14px
+                                @include media(540)
+                                    font-size: 12px
                         .btn
                             margin-top: 20px
                             @include media(1336)
                                 margin-top: 10px
+                            @include media(540)
+                                margin-top: 5px
                     figure
                         flex: 0 1 140px
                         border-radius: 10px

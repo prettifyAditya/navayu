@@ -8,6 +8,8 @@ header
     z-index: 5
     background: $white
     transition: .5s ease
+    @include media(540)
+        padding: 6px 12px
     .header-wrapper
         display: flex
         align-items: center
@@ -15,10 +17,18 @@ header
         height: 100%
         .logo
             height: 100%
+            @include media(540)
+                width: 110px
+                img
+                    object-fit: contain
         .right
             display: flex
             align-items: center
             gap: 28px
+            @include media(768)
+                gap: 18px
+            @include media(540)
+                gap: 12px
             .drop-down
                 display: flex
                 align-items: center
@@ -26,6 +36,8 @@ header
                 position: relative
                 --triangle: 10px
                 cursor: pointer
+                @include media(768)
+                    display: none
                 &:hover
                     .dropdown-menu
                         opacity: 1
@@ -86,7 +98,11 @@ header
                                         font-size: 14px
                                         line-height: 1.2
                                         color: $text
-
+            .btn
+                @include media(540)
+                    font-size: 12px
+                    --height: 32px
+                    --padding: 10px
             .ham-btn
                 span
                     background: $primary
@@ -95,6 +111,10 @@ header
                     display: block
                     &:not(:last-child)
                         margin-bottom: 6px
+                        @include media(540)
+                            margin-bottom: 5px
+                    @include media(540)
+                        width: 36px
 
 header
     &.header-fixed
