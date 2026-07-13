@@ -6,8 +6,10 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useModal } from "@/hooks/useModal";
 import TeamCol from "../../molecules/TeamCol";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function Experts() {
+  const isDesktop = useMediaQuery("(min-width: 991px)");
   const { openModal } = useModal();
   return (
     <section>
@@ -40,14 +42,25 @@ export default function Experts() {
             <div className="experts_wrapper">
               <Swiper
                 className="expert_slider no-padding"
-                direction="vertical"
                 allowTouchMove={false}
-                slidesPerView={1.4}
-                spaceBetween={20}
                 autoplay={{
                   delay: 0,
                   disableOnInteraction: false,
                   pauseOnMouseEnter: true,
+                }}
+                breakpoints={{
+                  768: {
+                    autoplay: false,
+                    allowTouchMove: true,
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    direction: "horizontal",
+                  },
+                  991: {
+                    slidesPerView: 1.4,
+                    spaceBetween: 20,
+                    direction: "vertical",
+                  },
                 }}
                 modules={[Autoplay]}
                 speed={2000}
@@ -62,31 +75,42 @@ export default function Experts() {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <Swiper
-                className="expert_slider no-padding"
-                direction="vertical"
-                allowTouchMove={false}
-                slidesPerView={1.4}
-                spaceBetween={20}
-                autoplay={{
-                  reverseDirection: true,
-                  delay: 0,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }}
-                modules={[Autoplay]}
-                speed={2000}
-                loop={true}
-              >
-                {expertsData.map((data) => (
-                  <SwiperSlide key={data.id}>
-                    <TeamCol
-                      data={data}
-                      onClick={() => openModal("teamPop", data)}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              {isDesktop && (
+                <Swiper
+                  className="expert_slider no-padding"
+                  allowTouchMove={false}
+                  autoplay={{
+                    reverseDirection: true,
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                  }}
+                  breakpoints={{
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 20,
+                      direction: "horizontal",
+                    },
+                    991: {
+                      slidesPerView: 1.4,
+                      spaceBetween: 20,
+                      direction: "vertical",
+                    },
+                  }}
+                  modules={[Autoplay]}
+                  speed={2000}
+                  loop={true}
+                >
+                  {expertsData.map((data) => (
+                    <SwiperSlide key={data.id}>
+                      <TeamCol
+                        data={data}
+                        onClick={() => openModal("teamPop", data)}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
             </div>
           </div>
         </div>
