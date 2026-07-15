@@ -8,15 +8,33 @@
             align-items: center
             justify-content: center
             gap: 80px
+            @include media(1280)
+                gap: 50px
+            @include media(991)
+                gap: 20px
+            @include media(768)
+                overflow-x: auto
+                @include scrollbar($width: 3px)
+            @include media(540)
+                justify-content: start
             li
                 position: relative
                 cursor: pointer
                 display: flex
-                flex-wrap: wrap
                 align-items: center
                 gap: 15px
                 padding: 15px
                 transition: .5s ease
+                @include media(991)
+                    gap: 12px
+                    padding: 12px
+                @include media(768)
+                    flex-wrap: wrap
+                    text-align: center
+                    justify-content: center
+                    gap: 8px
+                @include media(540)
+                    flex-wrap: nowrap
                 &.active
                     background: #FFFFFF66
                     &::before
@@ -41,6 +59,8 @@
                     width: 0
                     background: linear-gradient(90deg, #6D5DCF, #13958F)
                     transition: .7s ease
+                    @include media(1280)
+                        height: 4px
                 .icon
                     flex: 0 1 auto
                     display: flex
@@ -51,11 +71,21 @@
                     height: 54px
                     background: linear-gradient(90deg, $white, $white)
                     transition: .5s ease
+                    @include media(991)
+                        width: 48px
+                        height: 48px
+                    @include media(768)
+                        width: 45px
+                        height: 45px
+                    @include media(540)
+                        width: 40px
+                        height: 40px
                     img, svg
                         width: 60%
                         height: 60%
                         transition: .3s ease
                 p
+                    flex: 1
                     background: linear-gradient(90deg, #4B438D, #4B438D)
                     font-weight: 500
                     background-clip: text
@@ -64,8 +94,23 @@
                     -moz-background-clip: text
                     -moz-text-fill-color: transparent
                     transition: .5s ease
+                    @include media(768)
+                        flex: 0 1 100%
+                        font-size: 14px
+                        line-height: 1.2
+                    @include media(540)
+                        flex: 1
+                        white-space: nowrap
     .tab-nav-content
-        padding: 45px 0 80px
+        padding-top: 45px
+        padding-bottom: 80px
+        @include media(1280)
+            padding-top: 40px
+            padding-bottom: 70px
+        @include media(991)
+            padding-bottom: 60px
+        @include media(768)
+            padding-bottom: 50px
         .tabs
             transition: .7s ease
             &:not(.active)
@@ -74,6 +119,13 @@
                 display: grid
                 grid-template-columns: repeat(3, 1fr)
                 grid-gap: 20px
+                @include media(1280)
+                    grid-gap: 15px
+                @include media(991)
+                    grid-template-columns: repeat(2, 1fr)
+                @include media(540)
+                    grid-template-columns: repeat(1, 1fr)
+                    gap: 25px
 
 .treatmentDetails-banner
     .bg

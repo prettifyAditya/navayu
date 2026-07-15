@@ -1,5 +1,12 @@
 @import "../_common"
 
+.banner.faq_hero
+    .bg
+        .banner-wrapper
+            .content
+                @include media(768)
+                    max-width: 350px
+
 .faq_sec
     background: #F7F7FC
     .faq_wrapper
@@ -11,6 +18,8 @@
             border-radius: 10px
             &:not(:last-child)
                 margin-bottom: 18px
+                @include media(540)
+                    margin-bottom: 15px
             &.active
                 .faq_title
                     h4
@@ -31,24 +40,29 @@
                 gap: 20px
                 overflow: hidden
                 padding: 20px
+                @include media(768)
+                    padding: 18px
                 h4
+                    flex: 1
                     font-size: 16px
                     font-weight: 600
                     color: $text
                     transition: .5s ease
                 .icon
+                    flex: 0 1 auto
                     margin-left: auto
                     --size: 18px
                     --border: 2px
                     --bgcolor: var(--text)
                     width: var(--size)
                     height: var(--size)
-                    flex: 0 1 auto
                     position: relative
                     @include before(var(--bgcolor))
                     @include after(var(--bgcolor))
                     &::before,&::after
                         transition: .5s ease
+                    @include media(540)
+                        --size: 15px
                     &::before
                         top: calc(var(--size) / 2 - var(--border) / 2)
                         bottom: auto
@@ -73,3 +87,5 @@
                     font-weight: 400
                     color: $text
                     padding: 0 20px 20px
+                    @include media(768)
+                        padding: 0 18px 18px
