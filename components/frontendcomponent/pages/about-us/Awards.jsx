@@ -25,8 +25,8 @@ export default function Awards() {
               nextEl: ".award-next",
             }}
             breakpoints={{
-              0: { slidesPerView: 1.3, spaceBetween: 15 },
-              540: { slidesPerView: 1.5, spaceBetween: 20 },
+              0: { slidesPerView: 2, spaceBetween: 5 },
+              540: { slidesPerView: 2, spaceBetween: 10 },
               768: { slidesPerView: 2, spaceBetween: 20 },
               991: { slidesPerView: 3, spaceBetween: 20 },
             }}
