@@ -363,6 +363,9 @@ header
     overflow-y: auto
     transform: translate(-50%,100vh)
     transition: .7s ease
+    @include media(540)
+        height: 100%
+        max-height: 100%
     &.is-open
         transition: .7s ease
         transform: translate(-50%,-50%)
@@ -377,7 +380,9 @@ header
         min-height: fit-content
         @include scrollbar(3px,$white,#5e5e5e,8px)
         @include media(768)
-            padding: 0px 15px 20px
+            padding: 0px 20px 30px
+            margin-top: 40px
+            height: auto
         .title
             text-align: center
             margin-bottom: 1.5rem
@@ -385,6 +390,8 @@ header
                 font-size: 32px
                 color: $black
                 @include font(500)
+                @include media(540)
+                    font-size: 28px
             p
                 color: $text
                 font-size: 14px
@@ -397,9 +404,13 @@ header
         .form.enquire-form
             --gaptb: 28px
             --item: 2
+            @include media(540)
+                --item: 1
             .sbmt-grp
                 margin-top: 1rem
                 text-align: center
+                @include media(540)
+                    margin-top: 10px
 
 .team-pop.model
     max-width: 1000px
@@ -519,8 +530,7 @@ header
 
 .hero-banner.thank-you
     &::before
-        background: linear-gradient(180deg, #06000000 32.21%, #865aa6 100%), linear-gradient(
-180deg, #000000a6 0%, #0000 75.48%)
+        background: linear-gradient(180deg, #06000000 32.21%, #865aa6 100%), linear-gradient(180deg, #000000a6 0%, #0000 75.48%)
     .bg
         .banner-wrapper
             .content

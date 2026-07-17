@@ -13,8 +13,8 @@ $scrollwidth: 10px
 :root
     --headerpadding: 10px
     --headerheight: 73px
-    --headerfixed: 65px
-    --footerstrip: 38px
+    --headerfixed: 66px
+    --footerstrip: 66px
     --projectdetailstrip: 40px
     --primary: #4B438D
     --secondary: #13958F
@@ -384,10 +384,10 @@ button
         --padding: 16px
     @include font(500)
     z-index: 1
-    @include media(375)
-        --height: 32px
-        --padding: 12px
-        font-size: 12px
+    // @include media(375)
+    //     --height: 32px
+    //     --padding: 12px
+    //     font-size: 12px
     &:hover
         &:not(.disabled-btn,.btn-no-hover)
             background: none

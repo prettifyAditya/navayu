@@ -6,6 +6,7 @@ import Hamburger from "./Hamburger";
 import EnquirePop from "./EnquirePop";
 import "@/uploads/sass/footer/footer.css";
 import TeamPop from "./TeamPop";
+import FooterStrip from "./FooterStrip";
 
 const Footer = () => {
   return (
@@ -111,6 +112,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <FooterStrip />
       <Overlay />
       <VideoPop />
       <Hamburger />
