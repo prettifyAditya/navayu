@@ -35,6 +35,9 @@
                 @include media(540)
                     margin-top: 15px
     &.home-hero
+        .bg
+            @include media(540)
+                height: 520px
         .banner-wrapper
             .content
                 h1
@@ -246,9 +249,17 @@
     .heading
         text-align: center
         margin-bottom: 50px
+        @include media(768)
+            margin-bottom: 40px
+        @include media(540)
+            margin-bottom: 30px
         h2
             color: $primary
             font-size: 36px
+            @include media(768)
+                font-size: 32px
+            @include media(540)
+                font-size: 28px
     .team_wrapper
         position: relative
         .team_slider

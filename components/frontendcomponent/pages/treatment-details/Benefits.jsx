@@ -1,9 +1,12 @@
 "use client";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import { useEffect } from "react";
 
 export default function Benefits() {
+  const isDesktop = useMediaQuery("(min-width: 991px)");
   useEffect(() => {
+    if (!isDesktop) return;
     const section = document.querySelector(".benefits_sec .main_wrapper");
     const figCaption = document.querySelectorAll(
       ".benefits_sec .main_wrapper figcaption",
@@ -40,8 +43,10 @@ export default function Benefits() {
     return () => {
       observer.disconnect();
       clearTimeout(timeoutId);
+      section.classList.remove("active");
+      figCaption.forEach((item) => item.classList.remove("active"));
     };
-  }, []);
+  }, [isDesktop]);
   return (
     <section>
       <div className="benefits_sec">

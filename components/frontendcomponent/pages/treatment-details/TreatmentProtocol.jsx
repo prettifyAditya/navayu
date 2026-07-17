@@ -34,10 +34,14 @@ export default function TreatmentProtocol() {
             breakpoints={{
               0: {
                 slidesPerView: 1.5,
-                spaceBetween: 5,
+                spaceBetween: 10,
               },
               540: {
-                slidesPerView: 1.8,
+                slidesPerView: 1.6,
+                spaceBetween: 15,
+              },
+              769: {
+                slidesPerView: 2.4,
                 spaceBetween: 15,
               },
               991: {

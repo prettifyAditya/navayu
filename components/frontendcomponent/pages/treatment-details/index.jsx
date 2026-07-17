@@ -21,7 +21,6 @@ export default function TreatmentDetailsPage() {
       <TreatmentOptions />
       <WhyChooseUs />
       <OurTeam />
-      {/* <OurTeam /> */}
       <TreatmentForm />
       <RelatedServices />
     </main>
