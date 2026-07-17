@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 import "@/uploads/sass/header/header.css";
 import Link from "next/link";
 import { useModal } from "@/hooks/useModal";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { openModal } = useModal();
+  const pathname = usePathname();
+  const privacyPage = pathname.includes("privacy-policy");
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -20,7 +23,9 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className={isScrolled ? "header-fixed" : ""}>
+    <header
+      className={`${isScrolled ? "header-fixed" : ""} ${privacyPage ? "header-fill" : ""}`}
+    >
       <div className="header-wrapper">
         <a href="/" className="logo">
           <Image src="/image/logo.svg" alt="logo" width={149} height={51} />

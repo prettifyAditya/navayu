@@ -652,24 +652,17 @@
   :root {
     --containerfluid: 15px;
     --headerpadding: 12px;
-    --headerheight: 75px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  :root {
-    --headerheight: 65px;
   }
 }
 @media only screen and (max-width: 540px) {
   :root {
-    --headerfixed: 65px;
-    --headerheight: 55px;
+    --headerheight: 65px;
+    --headerfixed: 60px;
   }
 }
 @media only screen and (max-width: 375px) {
   :root {
     --containerfluid: 10px;
-    --headerheight: 50px;
   }
 }
 
@@ -1771,15 +1764,16 @@ button {
   font-family: var(--font-poppins), sans-serif;
   font-weight: 600;
 }
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 768px) {
   .website-content h1 {
-    font-size: 34px;
+    font-size: 32px;
+    margin-bottom: 35px;
   }
 }
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 540px) {
   .website-content h1 {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 25px;
   }
 }
 .website-content h2 {
@@ -1811,7 +1805,7 @@ button {
   }
 }
 .website-content h5 {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.3;
   font-weight: 500;
 }
@@ -1825,17 +1819,38 @@ button {
   line-height: 1.3;
   font-weight: 500;
 }
+@media only screen and (max-width: 675px) {
+  .website-content h6 {
+    font-size: 16px;
+  }
+}
 .website-content h2, .website-content h3, .website-content h4 {
   margin: 40px 0 18px;
 }
+@media only screen and (max-width: 675px) {
+  .website-content h2, .website-content h3, .website-content h4 {
+    margin: 20px 0 15px;
+  }
+}
 .website-content h5, .website-content h6 {
   margin: 22px 0 18px;
+}
+@media only screen and (max-width: 675px) {
+  .website-content h5, .website-content h6 {
+    margin: 15px 0 10px;
+  }
 }
 .website-content p, .website-content li {
   color: var(--text);
   text-align: justify;
   hyphens: auto;
   word-spacing: -0.07em;
+}
+@media only screen and (max-width: 675px) {
+  .website-content p, .website-content li {
+    font-size: 14px;
+    line-height: 1.4;
+  }
 }
 .website-content p b, .website-content li b {
   font-weight: 600;
@@ -1849,6 +1864,11 @@ button {
 }
 .website-content p, .website-content ul {
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 675px) {
+  .website-content p, .website-content ul {
+    margin-bottom: 15px;
+  }
 }
 .website-content ul {
   padding-left: 18px;
@@ -2394,6 +2414,9 @@ header .header-wrapper .right .ham-btn span:not(:last-child) {
 header.header-fixed {
   transition: 0.5s ease;
   height: var(--headerfixed);
+  box-shadow: 0 2px 8px rgba(99, 99, 99, 0.2);
+}
+header.header-fill {
   box-shadow: 0 2px 8px rgba(99, 99, 99, 0.2);
 }
 
