@@ -181,7 +181,7 @@ const footerLink = [
       },
       {
         label: "Privacy Policy",
-        path: "",
+        path: "/privacy-policy",
       },
     ],
   },
